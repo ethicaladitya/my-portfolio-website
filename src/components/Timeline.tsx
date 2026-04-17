@@ -17,8 +17,8 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="timeline" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60" />
+    <section id="timeline" className="py-24 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-60" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-50 rounded-full blur-3xl opacity-60" />
 
       <div className="section-container relative z-10">
@@ -61,8 +61,8 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                     <div
                       className={`flex items-start gap-6 p-5 rounded-2xl border-2 transition-all duration-300 ${
                         expanded === i
-                          ? "border-purple-200 bg-purple-50/50 shadow-glass"
-                          : "border-transparent bg-gray-50/60 hover:bg-gray-100/60 hover:border-gray-200"
+                          ? "border-purple-200 dark:border-purple-500/30 bg-purple-50/50 dark:bg-purple-900/20 shadow-glass dark:shadow-glass-dark"
+                          : "border-transparent bg-gray-50/60 dark:bg-gray-800/40 hover:bg-gray-100/60 dark:hover:bg-gray-800/80 hover:border-gray-200 dark:hover:border-gray-700"
                       }`}
                     >
                       {/* Timeline dot */}
@@ -70,8 +70,8 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                         <div
                           className={`w-12 h-12 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                             expanded === i
-                              ? "border-purple-400 bg-purple-500 text-white shadow-glow"
-                              : "border-purple-200 bg-white text-purple-600"
+                              ? "border-purple-400 dark:border-purple-500 bg-purple-500 text-white shadow-glow"
+                              : "border-purple-200 dark:border-purple-700 bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400"
                           }`}
                         >
                           {item.year.slice(-2)}
@@ -81,12 +81,12 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-                          <h3 className="text-base font-semibold text-gray-900">{item.title}</h3>
-                          <span className="text-xs font-medium text-purple-600 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded-full flex-shrink-0">
+                          <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">{item.title}</h3>
+                          <span className="text-xs font-medium text-purple-600 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-100 dark:border-purple-500/20 px-2 py-0.5 rounded-full flex-shrink-0">
                             {item.year}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-500 font-medium">{item.company}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{item.company}</p>
 
                         <AnimatePresence>
                           {expanded === i && (
@@ -104,7 +104,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                                 {item.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="tag-pill bg-purple-100 text-purple-700 text-xs"
+                                    className="tag-pill bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-transparent dark:border-purple-700/50 text-xs"
                                   >
                                     {tag}
                                   </span>

@@ -48,12 +48,12 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300"
     >
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-60" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-purple-100 via-blue-50 to-transparent rounded-full blur-3xl opacity-70" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-pink-100 via-purple-50 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-20" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-purple-100 dark:from-purple-900/30 via-blue-50 dark:via-blue-900/20 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-pink-100 dark:from-pink-900/30 via-purple-50 dark:via-purple-900/20 to-transparent rounded-full blur-3xl opacity-70" />
 
       {/* Floating blobs */}
       <motion.div
@@ -79,7 +79,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 text-green-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-medium mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Open to senior engineering & leadership roles
@@ -90,7 +90,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-500 font-medium mb-3"
+            className="text-xl text-gray-500 dark:text-gray-400 font-medium mb-3"
           >
             {data.hero.greeting}
           </motion.p>
@@ -110,7 +110,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl font-bold text-gray-700 mb-6 h-10 flex items-center gap-1"
+            className="text-2xl sm:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-6 h-10 flex items-center gap-1"
           >
             <span>{displayText}</span>
             <span className="w-0.5 h-8 bg-purple-500 animate-pulse ml-1" />
@@ -121,7 +121,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mb-10"
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mb-10"
           >
             {data.meta.tagline}
           </motion.p>
@@ -155,7 +155,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             <button
               id="hero-qr-btn"
               onClick={onOpenQR}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 hover:text-purple-600 border border-gray-200 hover:border-purple-200 bg-white/80 backdrop-blur-sm hover:bg-purple-50 transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 border border-gray-200 dark:border-gray-800 hover:border-purple-200 dark:hover:border-purple-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:bg-purple-50 dark:hover:bg-purple-500/20 transition-all duration-300 hover:-translate-y-0.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -171,11 +171,11 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             transition={{ delay: 0.9 }}
             className="mt-14 flex flex-wrap items-center gap-3"
           >
-            <span className="text-sm text-gray-400 font-medium mr-2">Core stack:</span>
+            <span className="text-sm text-gray-400 dark:text-gray-500 font-medium mr-2">Core stack:</span>
             {["WordPress", "Linux", "Nginx", "MySQL", "PHP", "Ansible", "Docker", "DevOps"].map((tech) => (
               <span
                 key={tech}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-gray-600 hover:border-purple-300 hover:text-purple-700 hover:bg-purple-50 transition-all cursor-default"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-purple-300 dark:hover:border-purple-500/50 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-500/20 transition-all cursor-default"
               >
                 {tech}
               </span>
@@ -189,13 +189,13 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500"
       >
         <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-5 h-8 rounded-full border-2 border-gray-300 flex items-start justify-center p-1"
+          className="w-5 h-8 rounded-full border-2 border-gray-300 dark:border-gray-700 flex items-start justify-center p-1"
         >
           <div className="w-1 h-2 bg-purple-400 rounded-full" />
         </motion.div>

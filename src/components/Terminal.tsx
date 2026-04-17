@@ -122,8 +122,8 @@ export default function Terminal() {
   };
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+    <section className="py-20 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-10" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -139,8 +139,8 @@ export default function Terminal() {
           <h2 className="section-heading">
             <span className="gradient-text">Interactive</span> Terminal
           </h2>
-          <p className="section-subheading mx-auto mt-4">
-            For the engineers who prefer a CLI. Type <code className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
+          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
+            For the engineers who prefer a CLI. Type <code className="text-purple-600 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
           </p>
         </motion.div>
 
@@ -203,7 +203,7 @@ export default function Terminal() {
               <div ref={bottomRef} />
             </div>
           </div>
-          <p className="text-center text-xs text-gray-400 mt-4 font-mono">
+          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-4 font-mono">
             Try: whoami · skills · stack · contact · clear
           </p>
         </motion.div>

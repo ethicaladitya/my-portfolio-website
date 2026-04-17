@@ -57,9 +57,9 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="what-i-do" className="py-24 bg-gray-50/50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+    <section id="what-i-do" className="py-24 bg-gray-50/50 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -75,7 +75,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
           <h2 className="section-heading">
             What I <span className="gradient-text">Actually Do</span>
           </h2>
-          <p className="section-subheading mx-auto mt-4">
+          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
             Not a list of technologies. Here&apos;s what I own, solve, and deliver in production environments every day.
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group gradient-border bg-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="group gradient-border bg-white dark:bg-gray-800/50 border border-transparent dark:border-white/5 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
             >
               {/* Icon */}
               <div
@@ -97,12 +97,12 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 leading-snug">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-5">
                 {item.description}
               </p>
 
@@ -111,7 +111,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="tag-pill bg-gray-100 text-gray-600 group-hover:bg-purple-50 group-hover:text-purple-700 transition-colors"
+                    className="tag-pill bg-gray-100 dark:bg-gray-900/80 border border-transparent dark:border-gray-700 text-gray-600 dark:text-gray-400 group-hover:bg-purple-50 dark:group-hover:bg-purple-500/20 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"
                   >
                     {tag}
                   </span>

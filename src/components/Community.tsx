@@ -37,10 +37,10 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 const cardGradients = [
-  { bg: "from-purple-50 to-indigo-50", icon: "from-purple-500 to-indigo-600", border: "border-purple-100" },
-  { bg: "from-blue-50 to-cyan-50", icon: "from-blue-500 to-cyan-600", border: "border-blue-100" },
-  { bg: "from-pink-50 to-rose-50", icon: "from-pink-500 to-rose-600", border: "border-pink-100" },
-  { bg: "from-green-50 to-teal-50", icon: "from-green-500 to-teal-600", border: "border-green-100" },
+  { bg: "from-purple-50 dark:from-purple-900/10 to-indigo-50 dark:to-indigo-900/10", icon: "from-purple-500 to-indigo-600", border: "border-purple-100 dark:border-purple-500/10" },
+  { bg: "from-blue-50 dark:from-blue-900/10 to-cyan-50 dark:to-cyan-900/10", icon: "from-blue-500 to-cyan-600", border: "border-blue-100 dark:border-blue-500/10" },
+  { bg: "from-pink-50 dark:from-pink-900/10 to-rose-50 dark:to-rose-900/10", icon: "from-pink-500 to-rose-600", border: "border-pink-100 dark:border-pink-500/10" },
+  { bg: "from-green-50 dark:from-green-900/10 to-teal-50 dark:to-teal-900/10", icon: "from-green-500 to-teal-600", border: "border-green-100 dark:border-green-500/10" },
 ];
 
 export default function Community({ items }: { items: CommunityItem[] }) {
@@ -48,9 +48,9 @@ export default function Community({ items }: { items: CommunityItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="community" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-80" />
-      <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-80" />
+    <section id="community" className="py-24 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-80 dark:opacity-40" />
+      <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-80 dark:opacity-40" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -66,7 +66,7 @@ export default function Community({ items }: { items: CommunityItem[] }) {
           <h2 className="section-heading">
             Beyond the <span className="gradient-text">Terminal</span>
           </h2>
-          <p className="section-subheading mx-auto mt-4">
+          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
             Engineering is more than code. I have spent years building communities, sharing knowledge, and developing the next generation of WordPress and DevOps engineers.
           </p>
         </motion.div>
@@ -91,18 +91,18 @@ export default function Community({ items }: { items: CommunityItem[] }) {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">{item.event}</h3>
-                    <p className="text-sm font-medium text-gray-500">{item.role}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{item.years}</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.event}</h3>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{item.role}</p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{item.years}</p>
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">{item.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5">{item.description}</p>
 
                 {/* Impact number */}
-                <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/80">
+                <div className="flex items-center gap-3 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/80 dark:border-gray-800">
                   <span className="text-2xl font-black gradient-text-static">{item.impact}</span>
-                  <span className="text-sm text-gray-500 font-medium">{item.impactLabel}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">{item.impactLabel}</span>
                 </div>
               </motion.div>
             );

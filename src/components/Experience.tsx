@@ -18,9 +18,9 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-24 bg-gray-50/70 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl" />
+    <section id="experience" className="py-24 bg-gray-50/70 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-10" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-100/50 dark:bg-indigo-900/20 rounded-full blur-3xl" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -36,7 +36,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
           <h2 className="section-heading">
             Where I&apos;ve <span className="gradient-text">Delivered</span>
           </h2>
-          <p className="section-subheading mx-auto mt-4">
+          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
             Real outcomes in production — not side projects or toy examples.
           </p>
         </motion.div>
@@ -51,26 +51,26 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
               className="relative group"
             >
               {/* Card */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300">
+              <div className="bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl hover:border-purple-200 dark:hover:border-purple-500/50 transition-all duration-300">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{exp.role}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">{exp.role}</h3>
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-base font-semibold gradient-text-static">
                         {exp.company}
                       </span>
                       {exp.remote && (
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600">
+                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-600 dark:text-blue-400">
                           Remote
                         </span>
                       )}
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-green-50 border border-green-200 text-green-600">
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-600 dark:text-green-400">
                         {exp.type}
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm font-semibold text-gray-500 bg-gray-100 px-4 py-2 rounded-xl whitespace-nowrap flex-shrink-0">
+                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 px-4 py-2 rounded-xl whitespace-nowrap flex-shrink-0">
                     {exp.period}
                   </span>
                 </div>
@@ -83,7 +83,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                       initial={{ opacity: 0, x: -10 }}
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.3 + j * 0.05 }}
-                      className="flex items-start gap-3 text-sm text-gray-600"
+                      className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400"
                     >
                       <div className="w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -96,15 +96,15 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                 </ul>
 
                 {/* Tech stack */}
-                <div className="pt-5 border-t border-gray-100">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+                <div className="pt-5 border-t border-gray-100 dark:border-gray-700/50">
+                  <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
                     Tech Stack
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {exp.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="tag-pill bg-purple-50 text-purple-700 border border-purple-100 hover:bg-purple-100 transition-colors text-xs"
+                        className="tag-pill bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-500/20 hover:bg-purple-100 dark:hover:bg-purple-500/30 transition-colors text-xs"
                       >
                         {tech}
                       </span>
