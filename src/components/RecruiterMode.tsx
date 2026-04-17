@@ -213,8 +213,8 @@ export default function RecruiterMode({
             <div className="text-center pt-4 pb-2">
               <p className="text-xs text-gray-400">
                 Generated from{" "}
-                <a href="https://adityashah30.github.io/portfolio" className="text-purple-500 hover:underline">
-                  adityashah30.github.io/portfolio
+                <a href="https://theadityashah.com" className="text-purple-500 hover:underline">
+                  theadityashah.com
                 </a>
               </p>
             </div>
