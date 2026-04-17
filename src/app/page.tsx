@@ -44,7 +44,7 @@ export default function Home() {
   const portfolioUrl =
     typeof window !== "undefined"
       ? window.location.origin + window.location.pathname
-      : "https://adityashah30.github.io/portfolio/";
+      : "https://theadityashah.com";
 
   useEffect(() => {
     const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -139,7 +139,7 @@ function Footer({ meta }: { meta: MetaData }) {
             ))}
           </div>
           <p className="text-gray-700 text-xs">
-            © {new Date().getFullYear()} Aditya Shah · Built with Next.js & Tailwind CSS · GitHub Pages
+            © {new Date().getFullYear()} Aditya Shah ·
           </p>
         </div>
       </div>
