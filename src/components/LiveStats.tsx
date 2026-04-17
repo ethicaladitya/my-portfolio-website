@@ -71,7 +71,7 @@ function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: 
       >
         {iconMap[stat.icon] || iconMap["calendar"]}
       </div>
-      <div className="text-4xl sm:text-5xl font-black tracking-tight gradient-text mb-2">
+      <div className="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-md mb-2">
         {count}
         {stat.suffix}
       </div>

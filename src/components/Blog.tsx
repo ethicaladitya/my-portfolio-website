@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface BlogPost {
@@ -24,6 +24,63 @@ function formatDate(dateStr: string) {
 export default function Blog({ posts }: { posts: BlogPost[] }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [livePosts, setLivePosts] = useState<BlogPost[]>(posts);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    async function fetchLivePosts() {
+      setIsLoading(true);
+      try {
+        const res = await fetch("https://adityashah.blog/wp-json/wp/v2/posts?per_page=3");
+        if (!res.ok) throw new Error("Failed to fetch");
+        const wpPosts = await res.json();
+        
+        const mappedPosts: BlogPost[] = wpPosts.map((wp: { title?: { rendered: string }; link: string; excerpt?: { rendered: string }; content?: { rendered: string }; date?: string; class_list?: string[] }, i: number) => {
+          // Extract category from class_list e.g. "category-security" -> "Security"
+          let category = "Article";
+          const catClass = wp.class_list?.find((c: string) => c.startsWith("category-"));
+          if (catClass) {
+            category = catClass.replace("category-", "").replace(/-/g, " ");
+            category = category.charAt(0).toUpperCase() + category.slice(1);
+          }
+          
+          // Clean HTML from excerpt
+          const rawExcerpt = wp.excerpt?.rendered || "";
+          const cleanExcerpt = rawExcerpt.replace(/<[^>]+>/g, "").replace(/&hellip;/g, "...").replace(/&#8217;/g, "'").trim();
+          
+          // Estimate reading time
+          const wordCount = (wp.content?.rendered || "").replace(/<[^>]+>/g, "").split(/\s+/).length;
+          const mins = Math.max(1, Math.ceil(wordCount / 200));
+
+          const gradients = [
+            "from-purple-500 to-indigo-500",
+            "from-blue-500 to-cyan-500",
+            "from-pink-500 to-rose-500",
+          ];
+
+          return {
+            title: wp.title?.rendered || "Blog Post",
+            slug: wp.link,
+            category,
+            excerpt: cleanExcerpt,
+            readTime: `${mins} min read`,
+            date: wp.date || new Date().toISOString(),
+            gradient: gradients[i % gradients.length],
+          };
+        });
+        
+        if (mappedPosts.length > 0) {
+          setLivePosts(mappedPosts);
+        }
+      } catch (err) {
+        console.error("Failed to load live blog posts:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    
+    fetchLivePosts();
+  }, []);
 
   return (
     <section id="blog" className="py-24 bg-gray-50/50 relative overflow-hidden">
@@ -61,8 +118,13 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+          {isLoading && (
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-2xl">
+              <div className="w-8 h-8 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+            </div>
+          )}
+          {livePosts.map((post, i) => (
             <motion.article
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -101,7 +163,9 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
                     {post.readTime}
                   </span>
                   <a
-                    href="#"
+                    href={post.slug}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm font-semibold text-purple-600 hover:text-purple-800 flex items-center gap-1 transition-colors"
                   >
                     Read
