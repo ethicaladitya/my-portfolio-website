@@ -47,7 +47,8 @@ export default function Home() {
       : "https://adityashah30.github.io/portfolio/";
 
   useEffect(() => {
-    fetch("/content.json")
+    const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+    fetch(`${base}/content.json`)
       .then((r) => r.json())
       .then(setData)
       .catch(console.error);
