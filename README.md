@@ -1,36 +1,168 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aditya Shah — Portfolio Website
 
-## Getting Started
+A modern, animated personal portfolio and resume website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. Statically exported and hosted on GitHub Pages.
 
-First, run the development server:
+🌐 **Live site:** [adityashah30.github.io/portfolio](https://adityashah30.github.io/portfolio/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- **Animated Hero** — Typewriter role effect, floating glassmorphism blobs
+- **Impact-Focused Cards** — What I Do section with gradient hover effects  
+- **Interactive Timeline** — Expandable career milestones
+- **Experience Section** — Structured work history with impact bullets
+- **Community & Speaking** — Event cards with impact numbers
+- **Live Stats** — Animated counter-up numbers on scroll
+- **Blog Cards** — Styled post cards with category gradients
+- **Terminal Easter Egg** — Fully functional CLI (`whoami`, `skills`, `stack`, `contact`)
+- **Recruiter Mode** — Clean, printable, ATS-friendly resume overlay
+- **QR Code Generator** — Generates QR code for portfolio URL
+- **Dark Mode Toggle** — Class-based dark mode
+- **Scroll Progress Bar** — Gradient progress indicator in navbar
+
+---
+
+## 🛠 Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| Next.js 14 (App Router) | Framework with static export |
+| Tailwind CSS v3 | Styling with custom design system |
+| Framer Motion | Animations and transitions |
+| `qrcode` | Client-side QR generation |
+| GitHub Actions | CI/CD pipeline |
+| GitHub Pages | Static hosting |
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css       ← Design system (glassmorphism, gradients, keyframes)
+│   ├── layout.tsx        ← SEO metadata, fonts
+│   └── page.tsx          ← Main page, assembles all sections
+├── components/
+│   ├── Navbar.tsx        ← Sticky glass navbar
+│   ├── Hero.tsx          ← Animated hero with typewriter
+│   ├── WhatIDo.tsx       ← Impact cards
+│   ├── LiveStats.tsx     ← Animated counters
+│   ├── Timeline.tsx      ← Expandable career timeline
+│   ├── Experience.tsx    ← Work history
+│   ├── Community.tsx     ← Events & speaking
+│   ├── Blog.tsx          ← Blog cards
+│   ├── Terminal.tsx      ← CLI easter egg
+│   ├── RecruiterMode.tsx ← Resume overlay
+│   └── QRModal.tsx       ← QR code modal
+
+public/
+└── content.json          ← ALL site content (edit this to update the site)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✏️ How to Edit Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All site content lives in **`public/content.json`**. Edit this file to update any section without touching code.
 
-## Learn More
+### Update personal info
+```json
+"meta": {
+  "name": "Your Name",
+  "email": "you@example.com",
+  "github": "https://github.com/yourusername",
+  ...
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Add a timeline entry
+```json
+{
+  "year": "2025",
+  "title": "Your New Role",
+  "company": "Company Name",
+  "description": "What you achieved...",
+  "tags": ["Tag1", "Tag2"]
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Add a blog post
+```json
+{
+  "title": "Post Title",
+  "category": "Category",
+  "excerpt": "Short description...",
+  "readTime": "5 min read",
+  "date": "2025-01-01",
+  "gradient": "from-purple-500 to-blue-500"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Local Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Clone the repo
+git clone https://github.com/adityashah30/portfolio.git
+cd portfolio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🏗 Build & Deploy
+
+### Build locally
+```bash
+npm run build
+# Output in ./out/
+```
+
+### Deploy to GitHub Pages
+
+1. Push to `main` branch → GitHub Actions auto-deploys
+2. Go to **Settings → Pages** → Source: `Deploy from a branch` → Branch: `gh-pages`
+3. Site will be live at `https://<username>.github.io/portfolio/`
+
+### Manual deploy
+The workflow in `.github/workflows/deploy.yml` runs automatically on every push to `main`.
+
+---
+
+## ⚙️ Environment Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_BASE_PATH` | Base path for GitHub Pages | `/portfolio` |
+
+Set `NEXT_PUBLIC_BASE_PATH` in `.env.local` for local testing with a subpath.
+
+For production, the GitHub Actions workflow sets this automatically.
+
+---
+
+## 🖨 Recruiter Mode
+
+Click **"Recruiter Mode"** in the navbar to open a clean, printable resume view. Use `Ctrl+P` / `Cmd+P` or the "Print / Save PDF" button.
+
+---
+
+## 📱 QR Code
+
+Click **"Generate QR"** on the hero to open a modal with a scannable QR code pointing to your portfolio URL.
+
+---
+
+## 📄 License
+
+MIT — feel free to fork and adapt for your own portfolio.

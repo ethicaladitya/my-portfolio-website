@@ -1,101 +1,147 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import WhatIDo from "@/components/WhatIDo";
+import LiveStats from "@/components/LiveStats";
+import Timeline from "@/components/Timeline";
+import Experience from "@/components/Experience";
+import Community from "@/components/Community";
+import Blog from "@/components/Blog";
+import Terminal from "@/components/Terminal";
+import RecruiterMode from "@/components/RecruiterMode";
+import QRModal from "@/components/QRModal";
+
+interface MetaData {
+  name: string;
+  title: string;
+  company: string;
+  email: string;
+  website: string;
+  github: string;
+  linkedin: string;
+  location: string;
+  tagline: string;
+}
+
+interface ContentData {
+  meta: MetaData;
+  hero: { greeting: string; roles: string[]; description: string };
+  stats: { value: number; suffix: string; label: string; icon: string }[];
+  whatIDo: { icon: string; title: string; description: string; tags: string[] }[];
+  timeline: { year: string; title: string; company: string; description: string; tags: string[] }[];
+  experience: { role: string; company: string; period: string; type: string; remote: boolean; highlights: string[]; stack: string[] }[];
+  community: { event: string; role: string; years: string; impact: string; impactLabel: string; description: string; icon: string }[];
+  blog: { title: string; slug: string; category: string; excerpt: string; readTime: string; date: string; gradient: string }[];
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [data, setData] = useState<ContentData | null>(null);
+  const [recruiterMode, setRecruiterMode] = useState(false);
+  const [qrOpen, setQrOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const portfolioUrl =
+    typeof window !== "undefined"
+      ? window.location.origin + window.location.pathname
+      : "https://adityashah30.github.io/portfolio/";
+
+  useEffect(() => {
+    fetch("/content.json")
+      .then((r) => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+          <p className="text-gray-400 text-sm font-medium">Loading portfolio...</p>
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Navbar
+        recruiterMode={recruiterMode}
+        onToggleRecruiter={() => setRecruiterMode((v) => !v)}
+      />
+
+      <main>
+        <Hero data={data} onOpenQR={() => setQrOpen(true)} />
+
+        <WhatIDo items={data.whatIDo} />
+
+        <LiveStats stats={data.stats} />
+
+        <Timeline items={data.timeline} />
+
+        <Experience items={data.experience} />
+
+        <Community items={data.community} />
+
+        <Blog posts={data.blog} />
+
+        <Terminal />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+      <Footer meta={data.meta} />
+
+      {/* Modals */}
+      <RecruiterMode
+        isOpen={recruiterMode}
+        onClose={() => setRecruiterMode(false)}
+        data={data}
+      />
+      <QRModal
+        isOpen={qrOpen}
+        onClose={() => setQrOpen(false)}
+        url={portfolioUrl}
+      />
+    </>
+  );
+}
+
+// Inline Footer to avoid circular import
+function Footer({ meta }: { meta: MetaData }) {
+  return (
+    <footer className="relative bg-gray-950 overflow-hidden">
+      <div className="h-px w-full bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500" />
+      <div className="section-container py-12">
+        <div className="flex flex-col items-center text-center gap-5">
+          <div className="text-2xl font-black text-white">
+            Aditya<span className="text-purple-400">.</span>
+          </div>
+          <p className="text-gray-400 text-sm max-w-sm">
+            Building the infrastructure that powers the web — one WordPress site at a time.
+          </p>
+          <div className="flex items-center gap-3">
+            {[
+              { href: meta.github, label: "GitHub" },
+              { href: meta.linkedin, label: "LinkedIn" },
+              { href: `mailto:${meta.email}`, label: "Email" },
+              { href: meta.website, label: "Website" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.label !== "Email" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-gray-500 hover:text-purple-400 transition-colors border border-gray-800 hover:border-purple-500/50 px-3 py-1.5 rounded-lg"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <p className="text-gray-700 text-xs">
+            © {new Date().getFullYear()} Aditya Shah · Built with Next.js & Tailwind CSS · GitHub Pages
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }
