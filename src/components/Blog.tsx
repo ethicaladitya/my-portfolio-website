@@ -44,9 +44,16 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             category = category.charAt(0).toUpperCase() + category.slice(1);
           }
           
+          // Decode HTML Entities for titles and excerpts
+          const decodeEntities = (html: string) => {
+            const txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+          };
+
           // Clean HTML from excerpt
           const rawExcerpt = wp.excerpt?.rendered || "";
-          const cleanExcerpt = rawExcerpt.replace(/<[^>]+>/g, "").replace(/&hellip;/g, "...").replace(/&#8217;/g, "'").trim();
+          const cleanExcerpt = decodeEntities(rawExcerpt.replace(/<[^>]+>/g, "").replace(/&hellip;/g, "...").trim());
           
           // Estimate reading time
           const wordCount = (wp.content?.rendered || "").replace(/<[^>]+>/g, "").split(/\s+/).length;
@@ -59,7 +66,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           ];
 
           return {
-            title: wp.title?.rendered || "Blog Post",
+            title: decodeEntities(wp.title?.rendered || "Blog Post"),
             slug: wp.link,
             category,
             excerpt: cleanExcerpt,
