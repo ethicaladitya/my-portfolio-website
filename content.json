@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "name": "Aditya Shah",
+    "title": "Hosting Support Manager & DevOps Engineer",
+    "company": "WPMU DEV (Incsub LLC)",
+    "location": "India",
+    "email": "hi@adityashah.dev",
+    "website": "https://theadityashah.com",
+    "github": "https://github.com/ethicaladitya",
+    "linkedin": "https://linkedin.com/in/ethicaladitya",
+    "tagline": "I scale WordPress infrastructure, secure production systems, and lead teams solving real-world hosting challenges."
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "roles": [
+      "Hosting Support Manager",
+      "DevOps Engineer",
+      "WordPress Infrastructure Expert",
+      "Community Leader",
+      "Production Problem Solver"
+    ],
+    "description": "10+ years in the WordPress ecosystem — scaling infrastructure, hardening security, and leading high-performance teams at WPMU DEV.",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Download Resume",
+      "tertiary": "Generate QR"
+    }
+  },
+  "stats": [
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Years of Experience",
+      "icon": "calendar"
+    },
+    {
+      "value": 50,
+      "suffix": "+",
+      "label": "Events & Workshops",
+      "icon": "mic"
+    },
+    {
+      "value": 1000,
+      "suffix": "+",
+      "label": "People Impacted",
+      "icon": "users"
+    },
+    {
+      "value": 99,
+      "suffix": ".9%",
+      "label": "Uptime Delivered",
+      "icon": "server"
+    }
+  ],
+  "whatIDo": [
+    {
+      "icon": "server",
+      "title": "Scale WordPress at Millions of Requests",
+      "description": "Architect and manage hosting infrastructure that keeps hundreds of thousands of WordPress sites online — through traffic spikes, shared resource contention, and edge cases most engineers never see.",
+      "tags": [
+        "Infrastructure",
+        "Performance",
+        "WordPress"
+      ]
+    },
+    {
+      "icon": "shield",
+      "title": "Harden Compromised Sites Under Pressure",
+      "description": "Lead malware cleanup and security hardening operations on live, compromised WordPress sites. Identify infection vectors, clean payloads, and implement firewall rules — without taking sites offline.",
+      "tags": [
+        "Security",
+        "Malware Cleanup",
+        "Hardening"
+      ]
+    },
+    {
+      "icon": "zap",
+      "title": "Diagnose and Resolve Production Outages",
+      "description": "Own the full incident lifecycle — from first alert to postmortem. Debug PHP errors, MySQL deadlocks, OOM kills, and server misconfigurations under real-time customer pressure.",
+      "tags": [
+        "Incident Response",
+        "Debugging",
+        "On-call"
+      ]
+    },
+    {
+      "icon": "users",
+      "title": "Build & Lead High-Performance Support Teams",
+      "description": "Hire, train, and manage distributed support engineers. Create internal tooling, SOPs, and escalation workflows that reduce response time and increase team autonomy.",
+      "tags": [
+        "Leadership",
+        "Team Building",
+        "Mentoring"
+      ]
+    },
+    {
+      "icon": "code",
+      "title": "Automate Internal Ops & Tooling",
+      "description": "Build automation scripts, Ansible playbooks, and internal dashboards that eliminate repetitive ops tasks and give engineers leverage to work at scale.",
+      "tags": [
+        "Automation",
+        "Ansible",
+        "DevOps"
+      ]
+    },
+    {
+      "icon": "trending-up",
+      "title": "Optimize for Performance at Scale",
+      "description": "Profile, benchmark, and tune WordPress sites — from query optimization and caching layers to CDN configuration and PHP-FPM pool tuning.",
+      "tags": [
+        "Performance",
+        "Caching",
+        "Optimization"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2014",
+      "title": "Started with WordPress",
+      "company": "Freelance",
+      "description": "Began hands-on work with WordPress — troubleshooting, customization, and hosting.",
+      "tags": [
+        "WordPress",
+        "Freelance"
+      ]
+    },
+    {
+      "year": "2016",
+      "title": "First Community Leadership Role",
+      "company": "WordPress Bhopal",
+      "description": "Took on a leadership role in organizing WordPress meetups and events. Began public speaking at local WordPress conferences.",
+      "tags": [
+        "Leadership",
+        "Community",
+        "Public Speaking"
+      ]
+    },
+    {
+      "year": "2018",
+      "title": "Happiness Engineer",
+      "company": "StoreApps",
+      "description": "Provided rigorous technical support and troubleshooting for enterprise WooCommerce plugins, helping customers resolve complex conflicts and configuration issues.",
+      "tags": [
+        "WooCommerce",
+        "Customer Support",
+        "Plugins"
+      ]
+    },
+    {
+      "year": "2018",
+      "title": "Joined WPMU DEV as Hosting Support Engineer",
+      "company": "WPMU DEV (Incsub LLC)",
+      "description": "Joined the WPMU DEV hosting team. Rapidly moved from ticket support to complex hosting investigations, malware cleanup, and server-level debugging.",
+      "tags": [
+        "Hosting",
+        "Security",
+        "Support"
+      ]
+    },
+    {
+      "year": "2019",
+      "title": "WordCamp Speaker & Organizer",
+      "company": "WordCamps in India",
+      "description": "Spoke at WordCamp on WordPress security and hosting best practices. Reached hundreds of developers, designers, and business owners.",
+      "tags": [
+        "WordCamp",
+        "Public Speaking",
+        "Education"
+      ]
+    },
+    {
+      "year": "2021",
+      "title": "Promoted to Senior Support Engineer",
+      "company": "WPMU DEV (Incsub LLC)",
+      "description": "Took ownership of high-severity escalations, cross-team coordination, and internal tooling. Mentored junior engineers and contributed to SOPs.",
+      "tags": [
+        "Leadership",
+        "Escalations",
+        "Mentorship"
+      ]
+    },
+    {
+      "year": "2022",
+      "title": "GDG & DevFest Speaker",
+      "company": "Google Developer Group",
+      "description": "Delivered talks at GDG events and DevFest conferences on DevOps, automation, and WordPress at scale to audiences of 300+ per event.",
+      "tags": [
+        "GDG",
+        "DevFest",
+        "DevOps"
+      ]
+    },
+    {
+      "year": "2023",
+      "title": "Hosting Support Manager",
+      "company": "WPMU DEV (Incsub LLC)",
+      "description": "Promoted to team manager. Leading the hosting support division — overseeing hiring, quality, tooling, escalation handling, and customer outcomes.",
+      "tags": [
+        "Management",
+        "Leadership",
+        "Hosting"
+      ]
+    },
+    {
+      "year": "2024–Present",
+      "title": "DevOps Engineer + Manager",
+      "company": "WPMU DEV (Incsub LLC)",
+      "description": "Dual role combining team leadership with hands-on DevOps work: Ansible automation, infrastructure observability, incident response, and internal tooling development.",
+      "tags": [
+        "DevOps",
+        "Ansible",
+        "Infrastructure",
+        "Management"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Hosting Support Manager & DevOps Engineer",
+      "company": "WPMU DEV (Incsub LLC)",
+      "period": "2018 – Present",
+      "type": "Full-time",
+      "remote": true,
+      "highlights": [
+        "Lead a distributed team of hosting support engineers across multiple time zones",
+        "Own incident response for critical customer-facing hosting outages end-to-end",
+        "Perform live malware cleanup and security hardening on compromised WordPress production sites",
+        "Build Ansible playbooks and internal tooling to automate repetitive ops workflows",
+        "Manage escalations involving PHP, MySQL, Nginx, server configuration, and WordPress core conflicts",
+        "Conduct hiring, onboarding, and performance reviews for support engineering roles",
+        "Drive internal knowledge base, SOPs, and training programs for the hosting team"
+      ],
+      "stack": [
+        "WordPress",
+        "Linux",
+        "Nginx",
+        "MySQL",
+        "PHP",
+        "Ansible",
+        "Docker",
+        "Git",
+        "Bash"
+      ]
+    },
+    {
+      "role": "Happiness Engineer",
+      "company": "StoreApps",
+      "period": "2018",
+      "type": "Full-time",
+      "remote": true,
+      "highlights": [
+        "Delivered technical support and advanced troubleshooting for a robust suite of WooCommerce plugins",
+        "Diagnosed plugin conflicts, theme incompatibilities, and PHP errors for e-commerce stores",
+        "Collaborated with developers to report bugs and suggest feature enhancements"
+      ],
+      "stack": [
+        "WordPress",
+        "WooCommerce",
+        "PHP",
+        "Customer Support"
+      ]
+    }
+  ],
+  "community": [
+    {
+      "event": "WordCamp",
+      "role": "Speaker & Organizer",
+      "years": "2016–2023",
+      "impact": "2000+",
+      "impactLabel": "attendees reached",
+      "description": "Spoke and helped organize multiple WordCamp events across India. Topics covered WordPress security, hosting architecture, and community growth.",
+      "icon": "wordpress"
+    },
+    {
+      "event": "GDG DevFest",
+      "role": "Speaker",
+      "years": "2022–2024",
+      "impact": "1500+",
+      "impactLabel": "developers reached",
+      "description": "Delivered sessions at Google Developer Group's DevFest events on DevOps, automation, and building developer tooling in the WordPress ecosystem.",
+      "icon": "google"
+    },
+    {
+      "event": "WordPress Workshops",
+      "role": "Trainer & Facilitator",
+      "years": "2017–Present",
+      "impact": "500+",
+      "impactLabel": "participants trained",
+      "description": "Ran hands-on workshops on WordPress security, performance optimization, and hosting management for developers and business owners.",
+      "icon": "book"
+    },
+    {
+      "event": "WP Meetups",
+      "role": "Organizer & Host",
+      "years": "2016–Present",
+      "impact": "100+",
+      "impactLabel": "sessions organized",
+      "description": "Organized regular WordPress community meetups in Bhopal. Created a consistent learning environment for local WordPress professionals.",
+      "icon": "calendar"
+    }
+  ],
+  "blog": [
+    {
+      "title": "Debugging WordPress Production Outages: A Field Guide",
+      "slug": "debugging-wordpress-production-outages",
+      "category": "Hosting",
+      "excerpt": "The methodical approach real hosting engineers use to diagnose and resolve outages — from OOM kills to MySQL deadlocks — under customer pressure.",
+      "readTime": "8 min read",
+      "date": "2024-01-15",
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "title": "WordPress Malware Cleanup Without Downtime",
+      "slug": "wordpress-malware-cleanup-no-downtime",
+      "category": "Security",
+      "excerpt": "How to identify infection vectors, clean malicious payloads, and harden a WordPress site — all without taking it offline or losing data.",
+      "readTime": "6 min read",
+      "date": "2024-02-20",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "title": "Scaling WordPress: What Actually Matters",
+      "slug": "scaling-wordpress-what-matters",
+      "category": "Performance",
+      "excerpt": "Skip the tutorials. Here's what actually bottlenecks WordPress at scale — and the real fixes that move the needle in production environments.",
+      "readTime": "10 min read",
+      "date": "2024-03-10",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "title": "Building Ansible Workflows for WordPress Hosting Ops",
+      "slug": "ansible-wordpress-hosting-ops",
+      "category": "DevOps",
+      "excerpt": "How I use Ansible to automate repetitive hosting operations tasks — from server provisioning to bulk site health checks — saving hours every week.",
+      "readTime": "7 min read",
+      "date": "2024-04-05",
+      "gradient": "from-green-500 to-teal-500"
+    },
+    {
+      "title": "Leading Remote Support Teams That Actually Scale",
+      "slug": "leading-remote-support-teams",
+      "category": "Leadership",
+      "excerpt": "Lessons from managing distributed support engineers across time zones — what works, what fails, and how to build a team with high autonomy.",
+      "readTime": "5 min read",
+      "date": "2024-05-01",
+      "gradient": "from-indigo-500 to-blue-500"
+    },
+    {
+      "title": "The WordPress Security Checklist I Actually Use",
+      "slug": "wordpress-security-checklist",
+      "category": "Security",
+      "excerpt": "Not the generic checklist you've read 100 times. This is what a hosting support manager actually checks when investigating a compromised site.",
+      "readTime": "9 min read",
+      "date": "2024-06-12",
+      "gradient": "from-pink-500 to-rose-500"
+    }
+  ]
+}
