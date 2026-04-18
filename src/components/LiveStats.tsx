@@ -53,7 +53,7 @@ const iconMap: Record<string, JSX.Element> = {
 function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: boolean }) {
   const count = useCountUp(stat.value, inView);
   const gradients = [
-    "from-purple-500 to-indigo-600",
+    "from-emerald-500 to-teal-600",
     "from-blue-500 to-cyan-600",
     "from-pink-500 to-rose-500",
     "from-green-500 to-teal-600",
@@ -87,7 +87,7 @@ export default function LiveStats({ stats }: { stats: Stat[] }) {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600" />
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
       <div className="absolute inset-0 opacity-10 bg-grid-pattern" />
       <div className="absolute inset-0 noise-bg" />
 

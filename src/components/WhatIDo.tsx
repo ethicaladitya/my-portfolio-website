@@ -37,12 +37,12 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 const gradients = [
-  "from-purple-500 to-indigo-500",
-  "from-blue-500 to-cyan-500",
-  "from-pink-500 to-rose-500",
-  "from-amber-500 to-orange-500",
-  "from-green-500 to-teal-500",
-  "from-violet-500 to-purple-500",
+  "from-emerald-500 to-teal-500",
+  "from-teal-500 to-cyan-500",
+  "from-cyan-500 to-blue-500",
+  "from-indigo-500 to-blue-500",
+  "from-indigo-400 to-cyan-500",
+  "from-slate-600 to-slate-800",
 ];
 
 interface WhatIDoItem {
@@ -59,7 +59,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
   return (
     <section id="what-i-do" className="py-24 bg-gray-50/50 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/50 dark:bg-purple-900/20 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/50 dark:bg-emerald-900/20 rounded-full blur-3xl" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -69,7 +69,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
             Impact-Focused
           </span>
           <h2 className="section-heading">
@@ -111,7 +111,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="tag-pill bg-gray-100 dark:bg-gray-900/80 border border-transparent dark:border-gray-700 text-gray-600 dark:text-gray-400 group-hover:bg-purple-50 dark:group-hover:bg-purple-500/20 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"
+                    className="tag-pill bg-gray-100 dark:bg-gray-900/80 border border-transparent dark:border-gray-700 text-gray-600 dark:text-gray-400 group-hover:bg-emerald-50 dark:group-hover:bg-emerald-500/20 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors"
                   >
                     {tag}
                   </span>

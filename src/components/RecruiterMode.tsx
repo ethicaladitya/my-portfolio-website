@@ -98,20 +98,20 @@ export default function RecruiterMode({
             {/* Header */}
             <header className="border-b border-gray-200 pb-6">
               <h1 className="text-4xl font-black text-gray-900 tracking-tight">{data.meta.name}</h1>
-              <p className="text-xl font-semibold text-purple-700 mt-1">{data.meta.title}</p>
+              <p className="text-xl font-semibold text-emerald-700 mt-1">{data.meta.title}</p>
               <p className="text-gray-600 mt-1">{data.meta.company}</p>
 
               <div className="flex flex-wrap gap-x-6 gap-y-1 mt-4 text-sm text-gray-500">
-                <a href={`mailto:${data.meta.email}`} className="hover:text-purple-600">
+                <a href={`mailto:${data.meta.email}`} className="hover:text-emerald-500">
                   {data.meta.email}
                 </a>
-                <a href={data.meta.website} target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">
+                <a href={data.meta.website} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
                   theadityashah.com
                 </a>
-                <a href={data.meta.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">
+                <a href={data.meta.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
                   LinkedIn
                 </a>
-                <a href={data.meta.github} target="_blank" rel="noopener noreferrer" className="hover:text-purple-600">
+                <a href={data.meta.github} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
                   GitHub
                 </a>
                 <span>{data.meta.location}</span>
@@ -120,7 +120,7 @@ export default function RecruiterMode({
 
             {/* Summary */}
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-purple-700 mb-3">Professional Summary</h2>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-3">Professional Summary</h2>
               <p className="text-gray-700 leading-relaxed text-sm">
                 Engineering manager and DevOps practitioner with 10+ years in the WordPress hosting ecosystem.
                 Currently leading the Hosting Support division at WPMU DEV — managing distributed teams,
@@ -132,7 +132,7 @@ export default function RecruiterMode({
 
             {/* Core Skills */}
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-purple-700 mb-3">Core Competencies</h2>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-3">Core Competencies</h2>
               <div className="flex flex-wrap gap-2">
                 {[
                   "WordPress Infrastructure",
@@ -152,7 +152,7 @@ export default function RecruiterMode({
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="text-xs font-medium px-3 py-1 bg-purple-50 border border-purple-100 text-purple-800 rounded-lg"
+                    className="text-xs font-medium px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-800 rounded-lg"
                   >
                     {skill}
                   </span>
@@ -162,7 +162,7 @@ export default function RecruiterMode({
 
             {/* Experience */}
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-purple-700 mb-4">Work Experience</h2>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-4">Work Experience</h2>
               {data.experience.map((exp, i) => (
                 <div key={i} className="mb-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
@@ -175,7 +175,7 @@ export default function RecruiterMode({
                   <ul className="mt-3 space-y-1.5">
                     {exp.highlights.map((h, j) => (
                       <li key={j} className="text-sm text-gray-600 flex items-start gap-2">
-                        <span className="text-purple-400 mt-0.5 flex-shrink-0">▸</span>
+                        <span className="text-emerald-500 mt-0.5 flex-shrink-0">▸</span>
                         {h}
                       </li>
                     ))}
@@ -193,7 +193,7 @@ export default function RecruiterMode({
 
             {/* Community */}
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-purple-700 mb-4">Community & Speaking</h2>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-4">Community & Speaking</h2>
               <div className="space-y-3">
                 {data.community.map((c, i) => (
                   <div key={i} className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm">
@@ -213,7 +213,7 @@ export default function RecruiterMode({
             <div className="text-center pt-4 pb-2">
               <p className="text-xs text-gray-400">
                 Generated from{" "}
-                <a href="https://theadityashah.com" className="text-purple-500 hover:underline">
+                <a href="https://theadityashah.com" className="text-emerald-600 hover:underline">
                   theadityashah.com
                 </a>
               </p>

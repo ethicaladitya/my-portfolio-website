@@ -37,7 +37,7 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 const cardGradients = [
-  { bg: "from-purple-50 dark:from-purple-900/10 to-indigo-50 dark:to-indigo-900/10", icon: "from-purple-500 to-indigo-600", border: "border-purple-100 dark:border-purple-500/10" },
+  { bg: "from-emerald-50 dark:from-emerald-900/10 to-teal-50 dark:to-teal-900/10", icon: "from-emerald-500 to-teal-600", border: "border-emerald-100 dark:border-emerald-500/10" },
   { bg: "from-blue-50 dark:from-blue-900/10 to-cyan-50 dark:to-cyan-900/10", icon: "from-blue-500 to-cyan-600", border: "border-blue-100 dark:border-blue-500/10" },
   { bg: "from-pink-50 dark:from-pink-900/10 to-rose-50 dark:to-rose-900/10", icon: "from-pink-500 to-rose-600", border: "border-pink-100 dark:border-pink-500/10" },
   { bg: "from-green-50 dark:from-green-900/10 to-teal-50 dark:to-teal-900/10", icon: "from-green-500 to-teal-600", border: "border-green-100 dark:border-green-500/10" },
@@ -49,7 +49,7 @@ export default function Community({ items }: { items: CommunityItem[] }) {
 
   return (
     <section id="community" className="py-24 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-50 dark:bg-purple-900/20 rounded-full blur-3xl opacity-80 dark:opacity-40" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-80 dark:opacity-40" />
       <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-80 dark:opacity-40" />
 
       <div className="section-container relative z-10">
@@ -60,7 +60,7 @@ export default function Community({ items }: { items: CommunityItem[] }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
             Community & Speaking
           </span>
           <h2 className="section-heading">

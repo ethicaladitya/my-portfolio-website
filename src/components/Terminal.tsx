@@ -133,14 +133,14 @@ export default function Terminal() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
             Easter Egg
           </span>
           <h2 className="section-heading">
             <span className="gradient-text">Interactive</span> Terminal
           </h2>
           <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
-            For the engineers who prefer a CLI. Type <code className="text-purple-600 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
+            For the engineers who prefer a CLI. Type <code className="text-emerald-600 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
           </p>
         </motion.div>
 

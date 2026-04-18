@@ -58,7 +58,7 @@ export default function Home() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-purple-200 dark:border-purple-900 border-t-purple-600 dark:border-t-purple-500 rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-emerald-200 dark:border-emerald-900 border-t-emerald-600 dark:border-t-emerald-500 rounded-full animate-spin" />
           <p className="text-gray-400 dark:text-gray-500 text-sm font-medium">Loading portfolio...</p>
         </div>
       </div>
@@ -111,11 +111,11 @@ export default function Home() {
 function Footer({ meta }: { meta: MetaData }) {
   return (
     <footer className="relative bg-gray-950 overflow-hidden">
-      <div className="h-px w-full bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500" />
+      <div className="h-px w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
       <div className="section-container py-12">
         <div className="flex flex-col items-center text-center gap-5">
           <div className="text-2xl font-black text-white">
-            Aditya<span className="text-purple-400">.</span>
+            Aditya<span className="text-emerald-400">.</span>
           </div>
           <p className="text-gray-400 text-sm max-w-sm">
             Building the infrastructure that powers the web — one WordPress site at a time.
@@ -132,7 +132,7 @@ function Footer({ meta }: { meta: MetaData }) {
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer me"
-                className="text-xs font-medium text-gray-500 hover:text-purple-400 transition-colors border border-gray-800 hover:border-purple-500/50 px-3 py-1.5 rounded-lg"
+                className="text-xs font-medium text-gray-500 hover:text-emerald-400 transition-colors border border-gray-800 hover:border-emerald-500/50 px-3 py-1.5 rounded-lg"
               >
                 {link.label}
               </a>

@@ -30,7 +30,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
             Professional Experience
           </span>
           <h2 className="section-heading">
@@ -51,7 +51,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
               className="relative group"
             >
               {/* Card */}
-              <div className="bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl hover:border-purple-200 dark:hover:border-purple-500/50 transition-all duration-300">
+              <div className="bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all duration-300">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                   <div>
@@ -85,7 +85,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                       transition={{ delay: 0.3 + j * 0.05 }}
                       className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400"
                     >
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -104,7 +104,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                     {exp.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="tag-pill bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-500/20 hover:bg-purple-100 dark:hover:bg-purple-500/30 transition-colors text-xs"
+                        className="tag-pill bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-500/20 hover:bg-emerald-100 dark:hover:bg-emerald-500/30 transition-colors text-xs"
                       >
                         {tech}
                       </span>
@@ -113,7 +113,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                 </div>
 
                 {/* Gradient accent on hover */}
-                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}

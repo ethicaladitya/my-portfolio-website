@@ -23,7 +23,7 @@
   }
 
   ::selection {
-    @apply bg-purple-200 text-purple-900;
+    @apply bg-emerald-200 text-emerald-900;
   }
 
   * {
@@ -43,13 +43,13 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500;
     background-size: 200% auto;
     animation: gradientX 4s ease infinite;
   }
 
   .gradient-text-static {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-cyan-500;
   }
 
   /* Section container */
@@ -74,8 +74,8 @@
   /* CTA button primary */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
-    bg-gradient-to-r from-purple-600 to-blue-500
-    hover:from-purple-700 hover:to-blue-600
+    bg-gradient-to-r from-emerald-500 to-cyan-500
+    hover:from-emerald-600 hover:to-cyan-600
     shadow-lg hover:shadow-glow
     transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
   }
@@ -83,8 +83,8 @@
   /* CTA button secondary */
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
-    border-2 border-purple-200 text-purple-700 bg-white/80 backdrop-blur-sm
-    hover:border-purple-400 hover:bg-purple-50 hover:shadow-glass
+    border-2 border-emerald-200 text-emerald-700 bg-white/80 backdrop-blur-sm
+    hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-glass
     transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
   }
 
@@ -113,9 +113,7 @@
     content: '';
     position: absolute;
     inset: -2px;
-    border-radius: calc(1rem + 2px);
-    background: linear-gradient(135deg, #7C3AED, #3B82F6, #EC4899);
-    z-index: -1;
+    background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -131,21 +129,21 @@
 
   /* Animated gradient bg */
   .animated-gradient {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #7C3AED);
+    background: linear-gradient(-45deg, #10b981, #14b8a6, #06b6d4, #059669);
     background-size: 400% 400%;
     animation: gradientX 8s ease infinite;
   }
 
   .bg-grid-pattern {
     background-image:
-      linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   /* Timeline line */
   .timeline-line {
-    @apply absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-blue-400 to-pink-400;
+    @apply absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-400 via-teal-400 to-cyan-400;
   }
 }
 
@@ -157,7 +155,7 @@
   @apply bg-gray-50;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-purple-400 to-blue-400 rounded-full;
+  @apply bg-gradient-to-b from-emerald-400 to-cyan-400 rounded-full;
 }
 
 /* Print styles for Recruiter Mode */

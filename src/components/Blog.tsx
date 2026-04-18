@@ -60,9 +60,9 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           const mins = Math.max(1, Math.ceil(wordCount / 200));
 
           const gradients = [
-            "from-purple-500 to-indigo-500",
-            "from-blue-500 to-cyan-500",
-            "from-pink-500 to-rose-500",
+            "from-emerald-500 to-teal-500",
+            "from-teal-500 to-cyan-500",
+            "from-cyan-500 to-blue-500",
           ];
 
           return {
@@ -104,7 +104,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14"
         >
           <div>
-            <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+            <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
               Insights & Writing
             </span>
             <h2 className="section-heading">
@@ -116,7 +116,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           </div>
           <a
             href="https://adityashah.blog/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors flex-shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors flex-shrink-0"
           >
             All posts
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-purple-100 dark:hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-emerald-100 dark:hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               {/* Gradient top strip */}
               <div className={`h-2 bg-gradient-to-r ${post.gradient}`} />
@@ -152,7 +152,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors leading-snug flex-1">
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug flex-1">
                   {post.title}
                 </h3>
 
@@ -173,7 +173,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
                     href={post.slug}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 flex items-center gap-1 transition-colors"
+                    className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 flex items-center gap-1 transition-colors"
                   >
                     Read
                     <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

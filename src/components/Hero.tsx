@@ -52,24 +52,24 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-20" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-purple-100 dark:from-purple-900/30 via-blue-50 dark:via-blue-900/20 to-transparent rounded-full blur-3xl opacity-70" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-pink-100 dark:from-pink-900/30 via-purple-50 dark:via-purple-900/20 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-100 dark:from-emerald-900/30 via-teal-50 dark:via-teal-900/20 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-100 dark:from-cyan-900/30 via-emerald-50 dark:via-emerald-900/20 to-transparent rounded-full blur-3xl opacity-70" />
 
       {/* Floating blobs */}
       <motion.div
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-gradient-to-br from-purple-200/40 to-blue-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
+        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/40 to-cyan-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
       />
       <motion.div
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-gradient-to-br from-pink-200/40 to-purple-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
+        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-gradient-to-br from-cyan-200/40 to-teal-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
       />
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-200/50 to-cyan-200/50 backdrop-blur-sm border border-white/60 hidden xl:block"
+        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-200/50 to-emerald-200/50 backdrop-blur-sm border border-white/60 hidden xl:block"
       />
 
       <div className="section-container relative z-10 pt-24 pb-12">
@@ -113,7 +113,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             className="text-2xl sm:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-6 h-10 flex items-center gap-1"
           >
             <span>{displayText}</span>
-            <span className="w-0.5 h-8 bg-purple-500 animate-pulse ml-1" />
+            <span className="w-0.5 h-8 bg-emerald-500 animate-pulse ml-1" />
           </motion.div>
 
           {/* Tagline */}
@@ -140,22 +140,10 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
               View My Work
             </a>
 
-            <a
-              href="/resume.pdf"
-              id="hero-download-resume"
-              download
-              className="btn-secondary text-base"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Download Resume
-            </a>
-
             <button
               id="hero-qr-btn"
               onClick={onOpenQR}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 border border-gray-200 dark:border-gray-800 hover:border-purple-200 dark:hover:border-purple-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:bg-purple-50 dark:hover:bg-purple-500/20 transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 border border-gray-200 dark:border-gray-800 hover:border-emerald-200 dark:hover:border-emerald-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:bg-emerald-50 dark:hover:bg-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -175,7 +163,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             {["WordPress", "Linux", "Nginx", "MySQL", "PHP", "Ansible", "Docker", "DevOps"].map((tech) => (
               <span
                 key={tech}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-purple-300 dark:hover:border-purple-500/50 hover:text-purple-700 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-500/20 transition-all cursor-default"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-emerald-300 dark:hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/20 transition-all cursor-default"
               >
                 {tech}
               </span>
@@ -197,7 +185,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="w-5 h-8 rounded-full border-2 border-gray-300 dark:border-gray-700 flex items-start justify-center p-1"
         >
-          <div className="w-1 h-2 bg-purple-400 rounded-full" />
+          <div className="w-1 h-2 bg-emerald-400 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

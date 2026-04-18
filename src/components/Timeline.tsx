@@ -29,7 +29,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-purple-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
             Career Journey
           </span>
           <h2 className="section-heading">
@@ -43,7 +43,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-blue-400 to-pink-400" />
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-400 via-teal-400 to-cyan-400" />
 
             <div className="space-y-4">
               {items.map((item, i) => (
@@ -61,7 +61,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                     <div
                       className={`flex items-start gap-6 p-5 rounded-2xl border-2 transition-all duration-300 ${
                         expanded === i
-                          ? "border-purple-200 dark:border-purple-500/30 bg-purple-50/50 dark:bg-purple-900/20 shadow-glass dark:shadow-glass-dark"
+                          ? "border-emerald-200 dark:border-emerald-500/30 bg-emerald-50/50 dark:bg-emerald-900/20 shadow-glass dark:shadow-glass-dark"
                           : "border-transparent bg-gray-50/60 dark:bg-gray-800/40 hover:bg-gray-100/60 dark:hover:bg-gray-800/80 hover:border-gray-200 dark:hover:border-gray-700"
                       }`}
                     >
@@ -70,8 +70,8 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                         <div
                           className={`w-12 h-12 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                             expanded === i
-                              ? "border-purple-400 dark:border-purple-500 bg-purple-500 text-white shadow-glow"
-                              : "border-purple-200 dark:border-purple-700 bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400"
+                              ? "border-emerald-400 dark:border-emerald-500 bg-emerald-500 text-white shadow-glow"
+                              : "border-emerald-200 dark:border-emerald-700 bg-white dark:bg-gray-900 text-emerald-600 dark:text-emerald-400"
                           }`}
                         >
                           {item.year.slice(-2)}
@@ -82,7 +82,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
                           <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">{item.title}</h3>
-                          <span className="text-xs font-medium text-purple-600 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-100 dark:border-purple-500/20 px-2 py-0.5 rounded-full flex-shrink-0">
+                          <span className="text-xs font-medium text-emerald-600 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 px-2 py-0.5 rounded-full flex-shrink-0">
                             {item.year}
                           </span>
                         </div>
@@ -104,7 +104,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
                                 {item.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="tag-pill bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-transparent dark:border-purple-700/50 text-xs"
+                                    className="tag-pill bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border border-transparent dark:border-emerald-700/50 text-xs"
                                   >
                                     {tag}
                                   </span>

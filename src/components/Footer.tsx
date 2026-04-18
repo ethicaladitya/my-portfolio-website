@@ -8,21 +8,21 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
   return (
     <footer className="relative bg-gray-950 overflow-hidden">
       {/* Gradient top border */}
-      <div className="h-px w-full bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500" />
+      <div className="h-px w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
 
       {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+        className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
       />
 
       <div className="section-container relative z-10 py-16">
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo */}
           <div className="text-3xl font-black text-white">
-            Aditya<span className="text-purple-400">.</span>
+            Aditya<span className="text-emerald-400">.</span>
           </div>
 
           {/* Tagline */}
@@ -76,7 +76,7 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300"
               >
                 {link.icon}
               </a>
