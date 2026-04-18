@@ -113,7 +113,9 @@
     content: '';
     position: absolute;
     inset: -2px;
+    border-radius: calc(1rem + 2px);
     background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
+    z-index: -1;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
