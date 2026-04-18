@@ -142,13 +142,13 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-emerald-100 dark:hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
-              {/* Gradient top strip */}
-              <div className={`h-2 bg-gradient-to-r ${post.gradient}`} />
+              {/* Solid top strip */}
+              <div className="h-1 bg-primary/20" />
 
               <div className="p-6 flex flex-col flex-1">
                 {/* Category + date */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`tag-pill bg-gradient-to-r ${post.gradient} text-white font-semibold`}>
+                  <span className="tag-pill bg-primary/10 text-primary font-bold">
                     {post.category}
                   </span>
                   <span className="text-xs text-gray-400 dark:text-gray-500">{formatDate(post.date)}</span>

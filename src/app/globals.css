@@ -58,13 +58,11 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-    background-size: 200% auto;
-    animation: gradientX 4s ease infinite;
+    @apply text-primary;
   }
 
   .gradient-text-static {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply text-primary;
   }
 
   /* Section container */
@@ -115,7 +113,7 @@
 }
 
 @layer utilities {
-  /* Gradient border */
+  /* Solid border utility */
   .gradient-border {
     position: relative;
     border-radius: 1rem;
@@ -125,16 +123,16 @@
   .gradient-border::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: calc(1rem + 2px);
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    inset: -1px;
+    border-radius: inherit;
+    background: rgb(var(--primary));
     z-index: -1;
-    opacity: 0;
+    opacity: 0.1;
     transition: opacity 0.3s ease;
   }
 
   .gradient-border:hover::before {
-    opacity: 1;
+    opacity: 0.3;
   }
 
   /* Noise texture for hero */
@@ -142,11 +140,9 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   }
 
-  /* Animated gradient bg */
+  /* Primary solid bg */
   .animated-gradient {
-    background: linear-gradient(-45deg, var(--primary), var(--accent), var(--accent-alt));
-    background-size: 400% 400%;
-    animation: gradientX 8s ease infinite;
+    @apply bg-primary;
   }
 
   .bg-grid-pattern {
@@ -158,7 +154,7 @@
 
   /* Timeline line */
   .timeline-line {
-    @apply absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent;
+    @apply absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30;
   }
 }
 
@@ -170,7 +166,7 @@
   @apply bg-gray-50;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-primary to-accent rounded-full;
+  @apply bg-primary/40 rounded-full hover:bg-primary/60;
 }
 
 /* Print styles for Recruiter Mode */

@@ -7,8 +7,8 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
 
   return (
     <footer className="relative bg-background overflow-hidden border-t border-text-secondary/10">
-      {/* Gradient top border */}
-      <div className="h-px w-full bg-gradient-to-r from-primary via-accent to-accent-alt" />
+      {/* Minimalist top border */}
+      <div className="h-0.5 w-full bg-primary/20" />
 
       {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />

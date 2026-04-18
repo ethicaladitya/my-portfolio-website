@@ -77,7 +77,7 @@ export default function Community({ items }: { items: CommunityItem[] }) {
                 <div className="flex items-start gap-5 mb-5">
                   {/* Icon */}
                   <div
-                    className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
                   >
                     {iconMap[item.icon] || iconMap["calendar"]}
                   </div>
@@ -93,7 +93,7 @@ export default function Community({ items }: { items: CommunityItem[] }) {
 
                 {/* Impact number */}
                 <div className="flex items-center gap-3 bg-background backdrop-blur-sm rounded-xl px-4 py-3 border border-text-secondary/10">
-                  <span className="text-2xl font-black gradient-text-static">{item.impact}</span>
+                  <span className="text-2xl font-black text-primary">{item.impact}</span>
                   <span className="text-sm text-text-secondary font-medium">{item.impactLabel}</span>
                 </div>
               </motion.div>

@@ -85,11 +85,11 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group gradient-border bg-background border border-text-secondary/10 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="group bg-background border border-text-secondary/10 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default relative overflow-hidden"
             >
               {/* Icon */}
               <div
-                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradients[i % gradients.length]} flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform duration-300`}
+                className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm"
               >
                 {iconMap[item.icon] || iconMap["server"]}
               </div>

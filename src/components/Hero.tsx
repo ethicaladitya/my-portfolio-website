@@ -53,24 +53,24 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
       {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-60" />
       {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/10 via-accent/5 to-transparent rounded-full blur-3xl opacity-70" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent-alt/10 via-primary/5 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl opacity-70" />
 
       {/* Floating blobs */}
       <motion.div
         animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
+        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-primary/5 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
       />
       <motion.div
         animate={{ y: [0, -30, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
+        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-accent/5 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
       />
       <motion.div
         animate={{ x: [0, 30, 0], rotate: [0, 15, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent-alt/10 to-primary/10 backdrop-blur-sm border border-text-primary/10 hidden xl:block"
+        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-primary/5 backdrop-blur-sm border border-text-primary/10 hidden xl:block"
       />
 
       <div className="section-container relative z-10 pt-24 pb-12">

@@ -46,7 +46,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
     <>
       {/* Scroll progress bar */}
       <div
-        className="fixed top-0 left-0 h-0.5 z-[100] bg-gradient-to-r from-primary via-accent to-accent-alt transition-all duration-100"
+        className="fixed top-0 left-0 h-0.5 z-[100] bg-primary transition-all duration-100"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -79,7 +79,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
                   className="text-sm font-medium text-text-secondary hover:text-primary transition-colors relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </div>

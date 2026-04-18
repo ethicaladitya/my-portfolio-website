@@ -66,11 +66,11 @@ function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: 
       className="flex flex-col items-center text-center group"
     >
       <div
-        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center text-white mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+        className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-white mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
       >
         {iconMap[stat.icon] || iconMap["calendar"]}
       </div>
-      <div className="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-md mb-2">
+      <div className="text-4xl sm:text-5xl font-black tracking-tight text-text-primary mb-2">
         {count}
         {stat.suffix}
       </div>
@@ -84,22 +84,20 @@ export default function LiveStats({ stats }: { stats: Stat[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-accent-alt" />
+    <section className="py-20 relative overflow-hidden bg-background-secondary border-y border-text-secondary/10">
       <div className="absolute inset-0 opacity-10 bg-grid-pattern" />
       <div className="absolute inset-0 noise-bg" />
 
-      {/* Animated orbs */}
+      {/* Subtle orbs */}
       <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+        className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
       />
       <motion.div
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+        className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
       />
 
       <div ref={ref} className="section-container relative z-10">

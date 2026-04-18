@@ -90,7 +90,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                       key={j}
                       className="flex items-start gap-3 text-sm text-text-secondary"
                     >
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
@@ -117,8 +117,8 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                   </div>
                 </div>
 
-                {/* Gradient accent on hover */}
-                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-primary via-accent to-accent-alt opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Solid accent on hover */}
+                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}

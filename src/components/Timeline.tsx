@@ -43,7 +43,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-accent-alt" />
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30" />
 
             <div className="space-y-4">
               {items.map((item, i) => (
