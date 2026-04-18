@@ -22,10 +22,32 @@ function formatDate(dateStr: string) {
 }
 
 export default function Blog({ posts }: { posts: BlogPost[] }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const containerRef = useRef(null);
+  const inView = useInView(containerRef, { once: true, margin: "-80px" });
   const [livePosts, setLivePosts] = useState<BlogPost[]>(posts);
   const [isLoading, setIsLoading] = useState(false);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.23, 1, 0.32, 1],
+      },
+    },
+  };
 
   useEffect(() => {
     async function fetchLivePosts() {
@@ -36,7 +58,6 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
         const wpPosts = await res.json();
         
         const mappedPosts: BlogPost[] = wpPosts.map((wp: { title?: { rendered: string }; link: string; excerpt?: { rendered: string }; content?: { rendered: string }; date?: string; class_list?: string[] }, i: number) => {
-          // Extract category from class_list e.g. "category-security" -> "Security"
           let category = "Article";
           const catClass = wp.class_list?.find((c: string) => c.startsWith("category-"));
           if (catClass) {
@@ -44,18 +65,16 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             category = category.charAt(0).toUpperCase() + category.slice(1);
           }
           
-          // Decode HTML Entities for titles and excerpts
           const decodeEntities = (html: string) => {
+            if (typeof document === 'undefined') return html;
             const txt = document.createElement("textarea");
             txt.innerHTML = html;
             return txt.value;
           };
 
-          // Clean HTML from excerpt
           const rawExcerpt = wp.excerpt?.rendered || "";
           const cleanExcerpt = decodeEntities(rawExcerpt.replace(/<[^>]+>/g, "").replace(/&hellip;/g, "...").trim());
           
-          // Estimate reading time
           const wordCount = (wp.content?.rendered || "").replace(/<[^>]+>/g, "").split(/\s+/).length;
           const mins = Math.max(1, Math.ceil(wordCount / 200));
 
@@ -76,99 +95,95 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           };
         });
         
-        if (mappedPosts.length > 0) {
-          setLivePosts(mappedPosts);
-        }
+        if (mappedPosts.length > 0) setLivePosts(mappedPosts);
       } catch (err) {
         console.error("Failed to load live blog posts:", err);
       } finally {
         setIsLoading(false);
       }
     }
-    
     fetchLivePosts();
   }, []);
 
   return (
-    <section id="blog" className="py-24 bg-background-secondary/50 relative overflow-hidden transition-colors duration-300">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl opacity-60" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-60" />
+    <section id="blog" className="py-24 bg-background relative overflow-hidden transition-colors duration-300">
+      <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
       <div className="section-container relative z-10">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, x: -30 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6"
+          className="flex flex-col sm:flex-row sm:items-end justify-between mb-20 gap-8"
         >
           <div className="flex-1">
-            <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
+            <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-4 block">
               Writing & Tutorials
             </span>
             <h2 className="section-heading text-left">
               From the <span className="gradient-text">Blog</span>
             </h2>
-            <p className="section-subheading text-text-secondary mt-4">
-              I document things when I fix them so I don&apos;t have to google them again.
+            <p className="section-subheading text-text-secondary mt-6 max-w-xl">
+              I document technical challenges and solutions to build a living knowledge base for myself and the community.
             </p>
           </div>
           <a
             href="https://blog.theadityashah.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors flex-shrink-0"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-primary transition-all pr-4"
           >
-            All posts
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <span className="animated-underline">Explore all posts</span>
+            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
             </svg>
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-          {/* Loading Overlay */}
+        <motion.div 
+          ref={containerRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative"
+        >
           {isLoading && (
-            <div className="absolute inset-0 z-20 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-2xl">
-              <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-background/40 backdrop-blur-[2px] rounded-2xl">
+              <div className="w-10 h-10 border-4 border-primary/10 border-t-primary rounded-full animate-spin" />
             </div>
           )}
           {livePosts.map((post, i) => (
             <motion.article
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-emerald-100 dark:hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -5,
+                transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1] }
+              }}
+              className="group bg-background border border-text-secondary/10 rounded-2x overflow-hidden hover:shadow-soft-elevation hover:border-primary/30 transition-all duration-300 flex flex-col h-full"
             >
-              {/* Solid top strip */}
-              <div className="h-1 bg-primary/20" />
-
-              <div className="p-6 flex flex-col flex-1">
-                {/* Category + date */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="tag-pill bg-primary/10 text-primary font-bold">
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="tag-pill bg-primary/5 text-primary border border-primary/10 text-[10px] font-bold tracking-wider uppercase">
                     {post.category}
                   </span>
-                  <span className="text-xs text-gray-400 dark:text-gray-500">{formatDate(post.date)}</span>
+                  <span className="text-[10px] font-bold text-text-secondary/40 tracking-widest uppercase">{formatDate(post.date)}</span>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug flex-1">
+                <h3 className="text-xl font-bold text-text-primary mb-4 group-hover:text-primary transition-colors leading-snug flex-1">
                   {post.title}
                 </h3>
 
-                {/* Excerpt */}
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-5 line-clamp-3">
+                <p className="text-sm text-text-secondary leading-relaxed mb-8 line-clamp-3">
                   {post.excerpt}
                 </p>
 
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <span className="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1">
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="flex items-center justify-between pt-6 border-t border-text-secondary/5 mt-auto">
+                  <span className="text-[10px] font-bold text-text-secondary/40 uppercase tracking-widest flex items-center gap-2">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {post.readTime}
                   </span>
@@ -176,18 +191,18 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
                     href={post.slug}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-primary hover:text-accent flex items-center gap-1 transition-colors"
+                    className="text-sm font-bold text-primary group-hover:text-accent flex items-center gap-1 transition-colors"
                   >
-                    Read
+                    Read More
                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7-7 7" />
                     </svg>
                   </a>
                 </div>
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

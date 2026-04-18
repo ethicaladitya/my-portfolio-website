@@ -94,12 +94,22 @@ const config: Config = {
       backdropBlur: {
         xs: "2px",
       },
+      transitionTimingFunction: {
+        "expo-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "premium-out": "cubic-bezier(0.23, 1, 0.32, 1)",
+      },
+      transitionDuration: {
+        "ultra-fast": "150ms",
+        "premium": "350ms",
+        "slow-mo": "750ms",
+      },
       boxShadow: {
         glass: "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
         "glass-dark": "0 8px 32px 0 rgba(0, 0, 0, 0.3)",
         glow: "0 0 30px rgba(124, 58, 237, 0.4)",
         "glow-blue": "0 0 30px rgba(59, 130, 246, 0.4)",
         "glow-pink": "0 0 30px rgba(236, 72, 153, 0.4)",
+        "soft-elevation": "0 20px 40px -10px rgba(0, 0, 0, 0.1)",
       },
     },
   },

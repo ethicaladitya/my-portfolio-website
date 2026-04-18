@@ -37,69 +37,100 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 export default function Community({ items }: { items: CommunityItem[] }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const containerRef = useRef(null);
+  const inView = useInView(containerRef, { once: true, margin: "-100px" });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.23, 1, 0.32, 1],
+      },
+    },
+  };
 
   return (
     <section id="community" className="py-24 bg-background relative overflow-hidden transition-colors duration-300">
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-80" />
-      <div className="absolute top-20 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl opacity-80" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute top-20 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
       <div className="section-container relative z-10">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-4 block">
             Community & Speaking
           </span>
           <h2 className="section-heading">
             Beyond the <span className="gradient-text">Terminal</span>
           </h2>
-          <p className="section-subheading text-text-secondary mx-auto mt-4">
+          <p className="section-subheading text-text-secondary mx-auto mt-6 px-4">
             Engineering is more than code. I have spent years building communities, sharing knowledge, and developing the next generation of WordPress and DevOps engineers.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <motion.div 
+          ref={containerRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto"
+        >
           {items.map((item, i) => {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group bg-background-secondary rounded-2xl border border-text-secondary/10 p-7 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -5,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                className="group bg-background-secondary/50 rounded-2xl border border-text-secondary/10 p-8 hover:shadow-soft-elevation transition-all duration-300 hover:border-primary/40 flex flex-col h-full"
               >
-                <div className="flex items-start gap-5 mb-5">
+                <div className="flex items-start gap-6 mb-6">
                   {/* Icon */}
                   <div
-                    className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-110 group-hover:shadow-glow transition-all duration-300"
                   >
                     {iconMap[item.icon] || iconMap["calendar"]}
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-bold text-text-primary">{item.event}</h3>
-                    <p className="text-sm font-medium text-text-secondary">{item.role}</p>
-                    <p className="text-xs text-text-secondary/60 mt-0.5">{item.years}</p>
+                  <div className="pt-1">
+                    <h3 className="text-xl font-bold text-text-primary tracking-tight">{item.event}</h3>
+                    <p className="text-xs font-bold text-primary uppercase tracking-widest mt-1 opacity-70">{item.role}</p>
+                    <p className="text-[10px] font-bold text-text-secondary/40 uppercase tracking-[0.2em] mt-2">{item.years}</p>
                   </div>
                 </div>
 
-                <p className="text-sm text-text-secondary leading-relaxed mb-5">{item.description}</p>
+                <p className="text-sm text-text-secondary leading-relaxed mb-8 flex-grow">{item.description}</p>
 
                 {/* Impact number */}
-                <div className="flex items-center gap-3 bg-background backdrop-blur-sm rounded-xl px-4 py-3 border border-text-secondary/10">
-                  <span className="text-2xl font-black text-primary">{item.impact}</span>
-                  <span className="text-sm text-text-secondary font-medium">{item.impactLabel}</span>
+                <div className="flex items-center gap-4 bg-background/50 rounded-xl px-5 py-4 border border-text-secondary/5 group-hover:border-primary/20 transition-colors">
+                  <span className="text-3xl font-black text-primary tracking-tighter">{item.impact}</span>
+                  <div className="h-4 w-px bg-text-secondary/10" />
+                  <span className="text-[10px] text-text-secondary font-black uppercase tracking-[0.2em]">{item.impactLabel}</span>
                 </div>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

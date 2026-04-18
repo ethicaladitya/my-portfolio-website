@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Noise from "@/components/Noise";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -83,7 +84,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Noise />
+        {children}
+      </body>
     </html>
   );
 }
