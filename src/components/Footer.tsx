@@ -6,27 +6,27 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gray-950 overflow-hidden">
+    <footer className="relative bg-background overflow-hidden border-t border-text-secondary/10">
       {/* Gradient top border */}
-      <div className="h-px w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
+      <div className="h-px w-full bg-gradient-to-r from-primary via-accent to-accent-alt" />
 
       {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <motion.div
-        animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+        animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.1, 0.05] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
+        className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl text-primary"
       />
 
       <div className="section-container relative z-10 py-16">
         <div className="flex flex-col items-center text-center gap-6">
           {/* Logo */}
-          <div className="text-3xl font-black text-white">
-            Aditya<span className="text-emerald-400">.</span>
+          <div className="text-3xl font-black text-text-primary">
+            Aditya<span className="text-primary">.</span>
           </div>
 
           {/* Tagline */}
-          <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
+          <p className="text-text-secondary text-sm max-w-sm leading-relaxed">
             Building the infrastructure that powers the web — one WordPress site at a time.
           </p>
 
@@ -76,7 +76,7 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300"
+                className="w-10 h-10 rounded-xl bg-background-secondary border border-text-secondary/10 flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 {link.icon}
               </a>
@@ -84,10 +84,10 @@ export default function Footer({ meta }: { meta: { name: string; email: string; 
           </div>
 
           {/* Divider */}
-          <div className="w-full max-w-xs h-px bg-gray-800" />
+          <div className="w-full max-w-xs h-px bg-text-secondary/10" />
 
           {/* Copyright */}
-          <p className="text-gray-600 text-xs">
+          <p className="text-text-secondary/60 text-xs">
             © {year} {meta.name} · Built with Next.js & Tailwind CSS · Hosted on GitHub Pages
           </p>
         </div>

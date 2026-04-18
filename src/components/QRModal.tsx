@@ -20,7 +20,7 @@ export default function QRModal({ isOpen, onClose, url }: QRModalProps) {
         width: 240,
         margin: 2,
         color: {
-          dark: "#1e1b4b",
+          dark: "#0f172a",
           light: "#ffffff",
         },
         errorCorrectionLevel: "M",
@@ -55,14 +55,14 @@ export default function QRModal({ isOpen, onClose, url }: QRModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="relative bg-white rounded-3xl shadow-2xl p-8 max-w-sm w-full"
+            className="relative bg-background rounded-3xl shadow-2xl p-8 max-w-sm w-full border border-text-secondary/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               id="qr-modal-close"
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all"
+              className="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-background-secondary transition-all"
               aria-label="Close QR modal"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,26 +72,26 @@ export default function QRModal({ isOpen, onClose, url }: QRModalProps) {
 
             {/* Header */}
             <div className="text-center mb-6">
-              <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 items-center justify-center text-white mb-4 shadow-glow">
+              <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent items-center justify-center text-white mb-4 shadow-glow">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                 </svg>
               </div>
-              <h2 className="text-xl font-bold text-gray-900">Share My Portfolio</h2>
-              <p className="text-sm text-gray-500 mt-1">Scan with any camera to open</p>
+              <h2 className="text-xl font-bold text-text-primary">Share My Portfolio</h2>
+              <p className="text-sm text-text-secondary mt-1">Scan with any camera to open</p>
             </div>
 
             {/* QR Canvas */}
             <div className="flex justify-center mb-6">
-              <div className="p-3 rounded-2xl bg-gradient-to-br from-emerald-50 to-cyan-50 border border-emerald-100">
+              <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
                 <canvas ref={canvasRef} id="qr-canvas" className="rounded-xl" />
               </div>
             </div>
 
             {/* URL display */}
-            <div className="bg-gray-50 rounded-xl px-4 py-3 text-center border border-gray-100">
-              <p className="text-xs text-gray-400 mb-1 uppercase tracking-widest font-medium">Portfolio URL</p>
-              <p className="text-sm font-mono text-gray-700 break-all">{url}</p>
+            <div className="bg-background-secondary rounded-xl px-4 py-3 text-center border border-text-secondary/10">
+              <p className="text-xs text-text-secondary/60 mb-1 uppercase tracking-widest font-medium">Portfolio URL</p>
+              <p className="text-sm font-mono text-text-primary break-all">{url}</p>
             </div>
 
             {/* Share button */}

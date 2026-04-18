@@ -18,9 +18,9 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-24 bg-gray-50/70 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-10" />
-      <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-100/50 dark:bg-indigo-900/20 rounded-full blur-3xl" />
+    <section id="experience" className="py-24 bg-background-secondary/70 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -28,16 +28,16 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
-            Professional Experience
+          <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
+            Work History
           </span>
           <h2 className="section-heading">
-            Where I&apos;ve <span className="gradient-text">Delivered</span>
+            Professional <span className="gradient-text">Experience</span>
           </h2>
-          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
-            Real outcomes in production — not side projects or toy examples.
+          <p className="section-subheading text-text-secondary mx-auto mt-4">
+            Building and scaling infrastructure for millions of sites.
           </p>
         </motion.div>
 
@@ -45,66 +45,71 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
           {items.map((exp, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative group"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group relative"
             >
               {/* Card */}
-              <div className="bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all duration-300">
+              <div className="bg-background border border-text-secondary/10 rounded-2xl p-8 hover:shadow-xl hover:border-primary/50 transition-all duration-300">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">{exp.role}</h3>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-base font-semibold gradient-text-static">
-                        {exp.company}
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl font-bold text-text-primary mb-1">{exp.role}</h3>
+                      <p className="text-primary font-semibold hidden lg:block px-2">—</p>
+                      <p className="text-lg font-semibold text-text-secondary">{exp.company}</p>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-xs font-semibold px-2 py-1 rounded border border-text-secondary/10 text-text-secondary bg-background-secondary">
+                        {exp.type}
                       </span>
                       {exp.remote && (
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-600 dark:text-blue-400">
+                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">
                           Remote
                         </span>
                       )}
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-600 dark:text-green-400">
-                        {exp.type}
-                      </span>
                     </div>
                   </div>
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 px-4 py-2 rounded-xl whitespace-nowrap flex-shrink-0">
-                    {exp.period}
-                  </span>
+
+                  <div className="flex items-center gap-2 lg:gap-0 lg:flex-col lg:items-end">
+                    <div className="hidden lg:flex w-full justify-end mb-2">
+                      <div className="h-0.5 w-12 bg-text-secondary/20 mr-4 mt-2" />
+                    </div>
+                    <span className="text-sm font-semibold text-text-secondary bg-background-secondary px-4 py-2 rounded-xl whitespace-nowrap flex-shrink-0">
+                      {exp.period}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Highlights */}
-                <ul className="space-y-3 mb-6">
-                  {exp.highlights.map((point, j) => (
-                    <motion.li
+                <ul className="space-y-4 mb-8">
+                  {exp.highlights.map((highlight, j) => (
+                    <li
                       key={j}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={inView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: 0.3 + j * 0.05 }}
-                      className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400"
+                      className="flex items-start gap-3 text-sm text-text-secondary"
                     >
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="leading-relaxed">{point}</span>
-                    </motion.li>
+                      <span className="leading-relaxed">{highlight}</span>
+                    </li>
                   ))}
                 </ul>
 
                 {/* Tech stack */}
-                <div className="pt-5 border-t border-gray-100 dark:border-gray-700/50">
-                  <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
-                    Tech Stack
+                <div className="pt-5 border-t border-text-secondary/10">
+                  <p className="text-xs font-semibold text-text-secondary/60 uppercase tracking-widest mb-3">
+                    Technologies
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {exp.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="tag-pill bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-500/20 hover:bg-emerald-100 dark:hover:bg-emerald-500/30 transition-colors text-xs"
+                        className="tag-pill bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 transition-colors text-xs"
                       >
                         {tech}
                       </span>
@@ -113,7 +118,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
                 </div>
 
                 {/* Gradient accent on hover */}
-                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 h-1 rounded-b-2xl bg-gradient-to-r from-primary via-accent to-accent-alt opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}

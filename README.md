@@ -137,7 +137,7 @@ npm run build
 ### Manual deploy
 The workflow in `.github/workflows/deploy.yml` runs automatically on every push to `main`.
 
-npx -y gh-pages -d out -t -m "Deploy: Manual deploy dark mode to gh-pages"
+npx -y gh-pages -d out -t -m "Deploy: comment to gh-pages"
 
 ---
 

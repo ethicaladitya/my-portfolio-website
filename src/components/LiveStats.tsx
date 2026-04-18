@@ -53,10 +53,9 @@ const iconMap: Record<string, JSX.Element> = {
 function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: boolean }) {
   const count = useCountUp(stat.value, inView);
   const gradients = [
-    "from-emerald-500 to-teal-600",
-    "from-blue-500 to-cyan-600",
-    "from-pink-500 to-rose-500",
-    "from-green-500 to-teal-600",
+    "from-primary to-accent",
+    "from-accent to-accent-alt",
+    "from-primary to-accent-alt",
   ];
 
   return (
@@ -75,7 +74,7 @@ function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: 
         {count}
         {stat.suffix}
       </div>
-      <div className="text-sm font-medium text-gray-500">{stat.label}</div>
+      <div className="text-sm font-medium text-text-secondary">{stat.label}</div>
     </motion.div>
   );
 }
@@ -87,7 +86,7 @@ export default function LiveStats({ stats }: { stats: Stat[] }) {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-accent-alt" />
       <div className="absolute inset-0 opacity-10 bg-grid-pattern" />
       <div className="absolute inset-0 noise-bg" />
 

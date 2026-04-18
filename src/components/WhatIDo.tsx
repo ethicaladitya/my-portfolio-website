@@ -37,12 +37,11 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 const gradients = [
-  "from-emerald-500 to-teal-500",
-  "from-teal-500 to-cyan-500",
-  "from-cyan-500 to-blue-500",
-  "from-indigo-500 to-blue-500",
-  "from-indigo-400 to-cyan-500",
-  "from-slate-600 to-slate-800",
+  "from-primary to-accent",
+  "from-accent to-accent-alt",
+  "from-primary to-accent-alt",
+  "from-accent-alt to-primary",
+  "from-primary via-accent to-accent-alt",
 ];
 
 interface WhatIDoItem {
@@ -57,9 +56,8 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="what-i-do" className="py-24 bg-gray-50/50 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/50 dark:bg-emerald-900/20 rounded-full blur-3xl" />
+    <section id="what-i-do" className="py-24 bg-background-secondary/50 relative overflow-hidden transition-colors duration-300">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -69,13 +67,13 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
             Impact-Focused
           </span>
           <h2 className="section-heading">
             What I <span className="gradient-text">Actually Do</span>
           </h2>
-          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
+          <p className="section-subheading text-text-secondary mx-auto mt-4">
             Not a list of technologies. Here&apos;s what I own, solve, and deliver in production environments every day.
           </p>
         </motion.div>
@@ -87,7 +85,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group gradient-border bg-white dark:bg-gray-800/50 border border-transparent dark:border-white/5 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="group gradient-border bg-background border border-text-secondary/10 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
             >
               {/* Icon */}
               <div
@@ -97,12 +95,12 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 leading-snug">
+              <h3 className="text-lg font-bold text-text-primary mb-3 leading-snug">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-5">
+              <p className="text-text-secondary text-sm leading-relaxed mb-5">
                 {item.description}
               </p>
 
@@ -111,7 +109,7 @@ export default function WhatIDo({ items }: { items: WhatIDoItem[] }) {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="tag-pill bg-gray-100 dark:bg-gray-900/80 border border-transparent dark:border-gray-700 text-gray-600 dark:text-gray-400 group-hover:bg-emerald-50 dark:group-hover:bg-emerald-500/20 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors"
+                    className="tag-pill bg-background-secondary border border-text-secondary/10 text-text-secondary group-hover:bg-primary/10 group-hover:text-primary transition-colors"
                   >
                     {tag}
                   </span>

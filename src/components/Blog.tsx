@@ -59,10 +59,10 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           const wordCount = (wp.content?.rendered || "").replace(/<[^>]+>/g, "").split(/\s+/).length;
           const mins = Math.max(1, Math.ceil(wordCount / 200));
 
-          const gradients = [
-            "from-emerald-500 to-teal-500",
-            "from-teal-500 to-cyan-500",
-            "from-cyan-500 to-blue-500",
+          const fallbackGradients = [
+            "from-primary to-accent",
+            "from-accent to-accent-alt",
+            "from-primary to-accent-alt",
           ];
 
           return {
@@ -72,7 +72,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             excerpt: cleanExcerpt,
             readTime: `${mins} min read`,
             date: wp.date || new Date().toISOString(),
-            gradient: gradients[i % gradients.length],
+            gradient: fallbackGradients[i % fallbackGradients.length],
           };
         });
         
@@ -90,33 +90,35 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
   }, []);
 
   return (
-    <section id="blog" className="py-24 bg-gray-50/50 dark:bg-gray-900/50 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
-      <div className="absolute top-0 left-0 w-80 h-80 bg-pink-50 dark:bg-pink-900/20 rounded-full blur-3xl opacity-60 dark:opacity-40" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-60 dark:opacity-40" />
+    <section id="blog" className="py-24 bg-background-secondary/50 relative overflow-hidden transition-colors duration-300">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl opacity-60" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-60" />
 
       <div className="section-container relative z-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, x: -30 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14"
+          className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6"
         >
-          <div>
-            <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
-              Insights & Writing
+          <div className="flex-1">
+            <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
+              Writing & Tutorials
             </span>
-            <h2 className="section-heading">
-              From the <span className="gradient-text">Field</span>
+            <h2 className="section-heading text-left">
+              From the <span className="gradient-text">Blog</span>
             </h2>
-            <p className="section-subheading dark:text-gray-400 mt-4">
-              Real-world learnings from 10+ years of production WordPress hosting.
+            <p className="section-subheading text-text-secondary mt-4">
+              I document things when I fix them so I don&apos;t have to google them again.
             </p>
           </div>
           <a
-            href="https://adityashah.blog/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors flex-shrink-0"
+            href="https://blog.theadityashah.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors flex-shrink-0"
           >
             All posts
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,9 +128,10 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+          {/* Loading Overlay */}
           {isLoading && (
-            <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl">
-              <div className="w-8 h-8 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin" />
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-2xl">
+              <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
             </div>
           )}
           {livePosts.map((post, i) => (
@@ -173,11 +176,11 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
                     href={post.slug}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 flex items-center gap-1 transition-colors"
+                    className="text-sm font-semibold text-primary hover:text-accent flex items-center gap-1 transition-colors"
                   >
                     Read
-                    <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
                 </div>

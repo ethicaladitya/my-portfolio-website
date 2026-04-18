@@ -14,13 +14,18 @@ const config: Config = {
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
-        brand: {
-          purple: "#7C3AED",
-          violet: "#8B5CF6",
-          blue: "#3B82F6",
-          indigo: "#6366F1",
-          pink: "#EC4899",
-          cyan: "#06B6D4",
+        bg: {
+          DEFAULT: "var(--bg)",
+          secondary: "var(--bg-secondary)",
+        },
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+        },
+        primary: "var(--primary)",
+        accent: {
+          DEFAULT: "var(--accent)",
+          alt: "var(--accent-alt)",
         },
       },
       backgroundImage: {

@@ -56,10 +56,10 @@ export default function Home() {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 transition-colors">
+      <div className="min-h-screen flex items-center justify-center bg-background transition-colors">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-emerald-200 dark:border-emerald-900 border-t-emerald-600 dark:border-t-emerald-500 rounded-full animate-spin" />
-          <p className="text-gray-400 dark:text-gray-500 text-sm font-medium">Loading portfolio...</p>
+          <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+          <p className="text-text-secondary text-sm font-medium">Loading portfolio...</p>
         </div>
       </div>
     );
@@ -110,14 +110,14 @@ export default function Home() {
 // Inline Footer to avoid circular import
 function Footer({ meta }: { meta: MetaData }) {
   return (
-    <footer className="relative bg-gray-950 overflow-hidden">
-      <div className="h-px w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
+    <footer className="relative bg-background border-t border-text-secondary/10 overflow-hidden">
+      <div className="h-px w-full bg-gradient-to-r from-primary via-accent to-accent-alt" />
       <div className="section-container py-12">
         <div className="flex flex-col items-center text-center gap-5">
-          <div className="text-2xl font-black text-white">
-            Aditya<span className="text-emerald-400">.</span>
+          <div className="text-2xl font-black text-text-primary">
+            Aditya<span className="text-primary">.</span>
           </div>
-          <p className="text-gray-400 text-sm max-w-sm">
+          <p className="text-text-secondary text-sm max-w-sm">
             Building the infrastructure that powers the web — one WordPress site at a time.
           </p>
           <div className="flex items-center gap-3">
@@ -132,13 +132,13 @@ function Footer({ meta }: { meta: MetaData }) {
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer me"
-                className="text-xs font-medium text-gray-500 hover:text-emerald-400 transition-colors border border-gray-800 hover:border-emerald-500/50 px-3 py-1.5 rounded-lg"
+                className="text-xs font-medium text-text-secondary hover:text-primary transition-colors border border-text-secondary/20 hover:border-primary/50 px-3 py-1.5 rounded-lg"
               >
                 {link.label}
               </a>
             ))}
           </div>
-          <p className="text-gray-700 text-xs">
+          <p className="text-text-secondary/50 text-xs">
             © {new Date().getFullYear()} Aditya Shah ·
           </p>
         </div>

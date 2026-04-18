@@ -46,7 +46,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
     <>
       {/* Scroll progress bar */}
       <div
-        className="fixed top-0 left-0 h-0.5 z-[100] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 transition-all duration-100"
+        className="fixed top-0 left-0 h-0.5 z-[100] bg-gradient-to-r from-primary via-accent to-accent-alt transition-all duration-100"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -56,7 +56,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-sm border-b border-white/60 dark:border-white/10"
+            ? "bg-background/80 backdrop-blur-xl shadow-sm border-b border-text-secondary/10"
             : "bg-transparent"
         }`}
       >
@@ -64,10 +64,10 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a
-              href="#hero"
+              href="#home"
               className="text-xl font-bold gradient-text-static hover:opacity-80 transition-opacity"
             >
-              Aditya<span className="text-gray-400">.</span>
+              Aditya<span className="text-primary">.</span>
             </a>
 
             {/* Desktop nav links */}
@@ -76,10 +76,10 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors relative group"
+                  className="text-sm font-medium text-text-secondary hover:text-primary transition-colors relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </div>
@@ -91,7 +91,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
                 id="dark-mode-toggle"
                 onClick={() => setDarkMode(!darkMode)}
                 aria-label="Toggle dark mode"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 transition-all"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary/10 transition-all"
               >
                 {darkMode ? (
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -110,11 +110,11 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
                 onClick={onToggleRecruiter}
                 className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   recruiterMode
-                    ? "bg-emerald-600 text-white shadow-glow"
-                    : "border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-500/10"
+                    ? "bg-primary text-background shadow-glow"
+                    : "border border-primary/30 text-primary hover:bg-primary/10"
                 }`}
               >
-                <span className={`w-2 h-2 rounded-full ${recruiterMode ? "bg-green-400 animate-pulse" : "bg-gray-300"}`} />
+                <span className={`w-2 h-2 rounded-full ${recruiterMode ? "bg-[#22c55e] animate-pulse" : "bg-text-secondary/50"}`} />
                 {recruiterMode ? "Exit Resume" : "Recruiter Mode"}
               </button>
 
@@ -122,7 +122,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
               <button
                 id="mobile-menu-btn"
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden w-9 h-9 flex items-center justify-center text-gray-600 dark:text-gray-300"
+                className="md:hidden w-9 h-9 flex items-center justify-center text-text-secondary"
                 aria-label="Open menu"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800"
+              className="md:hidden bg-background/95 backdrop-blur-xl border-t border-text-secondary/10"
             >
               <div className="section-container py-4 flex flex-col gap-3">
                 {navLinks.map((link) => (
@@ -152,7 +152,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors py-1"
+                    className="text-sm font-medium text-text-secondary hover:text-primary transition-colors py-1"
                   >
                     {link.label}
                   </a>

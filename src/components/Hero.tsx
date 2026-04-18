@@ -47,29 +47,30 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
 
   return (
     <section
-      id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300"
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-background transition-colors duration-300"
     >
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-20" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-100 dark:from-emerald-900/30 via-teal-50 dark:via-teal-900/20 to-transparent rounded-full blur-3xl opacity-70" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-100 dark:from-cyan-900/30 via-emerald-50 dark:via-emerald-900/20 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-60" />
+      {/* Background blobs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/10 via-accent/5 to-transparent rounded-full blur-3xl opacity-70" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent-alt/10 via-primary/5 to-transparent rounded-full blur-3xl opacity-70" />
 
       {/* Floating blobs */}
       <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/40 to-cyan-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
+        animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-24 right-16 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
       />
       <motion.div
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-gradient-to-br from-cyan-200/40 to-teal-200/40 backdrop-blur-sm border border-white/60 hidden lg:block"
+        animate={{ y: [0, -30, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-32 right-32 w-40 h-40 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 backdrop-blur-sm border border-text-primary/10 hidden lg:block"
       />
       <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-200/50 to-emerald-200/50 backdrop-blur-sm border border-white/60 hidden xl:block"
+        animate={{ x: [0, 30, 0], rotate: [0, 15, 0] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/2 left-8 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent-alt/10 to-primary/10 backdrop-blur-sm border border-text-primary/10 hidden xl:block"
       />
 
       <div className="section-container relative z-10 pt-24 pb-12">
@@ -86,14 +87,14 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           </motion.div>
 
           {/* Greeting */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-500 dark:text-gray-400 font-medium mb-3"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xl text-text-secondary font-medium mb-3"
           >
             {data.hero.greeting}
-          </motion.p>
+          </motion.div>
 
           {/* Name */}
           <motion.h1
@@ -109,19 +110,19 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl font-bold text-gray-700 dark:text-gray-300 mb-6 h-10 flex items-center gap-1"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-2xl sm:text-3xl font-bold text-text-primary mb-6 h-10 flex items-center gap-1"
           >
-            <span>{displayText}</span>
-            <span className="w-0.5 h-8 bg-emerald-500 animate-pulse ml-1" />
+            I build <span className="gradient-text ml-1.5">{displayText}</span>
+            <span className="w-0.5 h-8 bg-primary animate-pulse ml-1" />
           </motion.div>
 
           {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mb-10"
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl mb-10"
           >
             {data.meta.tagline}
           </motion.p>
@@ -141,9 +142,8 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
             </a>
 
             <button
-              id="hero-qr-btn"
               onClick={onOpenQR}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 border border-gray-200 dark:border-gray-800 hover:border-emerald-200 dark:hover:border-emerald-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:bg-emerald-50 dark:hover:bg-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-text-secondary hover:text-primary border border-text-secondary/20 hover:border-primary/50 bg-background hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -156,17 +156,20 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="mt-14 flex flex-wrap items-center gap-3"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-16 flex flex-wrap items-center gap-3"
           >
-            <span className="text-sm text-gray-400 dark:text-gray-500 font-medium mr-2">Core stack:</span>
-            {["WordPress", "Linux", "Nginx", "MySQL", "PHP", "Ansible", "Docker", "DevOps"].map((tech) => (
-              <span
+            <span className="text-sm text-text-secondary/60 font-medium mr-2">Core stack:</span>
+            {["WordPress", "PHP/MySQL", "Nginx", "Linux", "Docker", "React"].map((tech, i) => (
+              <motion.span
                 key={tech}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-emerald-300 dark:hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/20 transition-all cursor-default"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-background-secondary border border-text-secondary/20 text-text-secondary hover:border-primary/50 hover:text-primary hover:bg-primary/10 transition-all cursor-default"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.9 + i * 0.1 }}
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </motion.div>
         </div>
@@ -176,16 +179,16 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500"
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-secondary/60"
       >
-        <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <span className="text-xs font-medium uppercase tracking-widest">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-5 h-8 rounded-full border-2 border-gray-300 dark:border-gray-700 flex items-start justify-center p-1"
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-5 h-8 rounded-full border-2 border-text-secondary/40 flex items-start justify-center p-1"
         >
-          <div className="w-1 h-2 bg-emerald-400 rounded-full" />
+          <div className="w-1 h-2 bg-primary rounded-full" />
         </motion.div>
       </motion.div>
     </section>

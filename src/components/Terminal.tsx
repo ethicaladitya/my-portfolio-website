@@ -122,8 +122,8 @@ export default function Terminal() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-10" />
+    <section className="py-20 bg-background relative overflow-hidden transition-colors duration-300">
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-10" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -133,14 +133,14 @@ export default function Terminal() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-semibold text-emerald-600 tracking-widest uppercase mb-3 block">
+          <span className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 block">
             Easter Egg
           </span>
           <h2 className="section-heading">
             <span className="gradient-text">Interactive</span> Terminal
           </h2>
-          <p className="section-subheading dark:text-gray-400 mx-auto mt-4">
-            For the engineers who prefer a CLI. Type <code className="text-emerald-600 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
+          <p className="section-subheading text-text-secondary mx-auto mt-4">
+            For the engineers who prefer a CLI. Type <code className="text-primary bg-primary/10 px-1.5 py-0.5 rounded text-sm">help</code> to begin.
           </p>
         </motion.div>
 
