@@ -2,7 +2,7 @@
 
 A modern, animated personal portfolio and resume website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. Statically exported and hosted on GitHub Pages.
 
-🌐 **Live site:** [adityashah30.github.io/portfolio](https://adityashah30.github.io/portfolio/)
+🌐 **Live site:** [theadityashah.com](https://theadityashah.com)
 
 ---
 
@@ -106,7 +106,7 @@ All site content lives in **`public/content.json`**. Edit this file to update an
 
 ```bash
 # Clone the repo
-git clone https://github.com/adityashah30/portfolio.git
+git clone https://github.com/ethicaladitya/my-portfolio-website.git
 cd portfolio
 
 # Install dependencies
@@ -136,6 +136,8 @@ npm run build
 
 ### Manual deploy
 The workflow in `.github/workflows/deploy.yml` runs automatically on every push to `main`.
+
+npx -y gh-pages -d out -t -m "Deploy: Manual deploy dark mode to gh-pages"
 
 ---
 

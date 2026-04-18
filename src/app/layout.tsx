@@ -2,23 +2,30 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aditya Shah — Hosting Support Manager & DevOps Engineer",
+  metadataBase: new URL("https://theadityashah.com"),
+  title: {
+    default: "Aditya Shah — Hosting Support Manager & DevOps Engineer",
+    template: "%s | Aditya Shah"
+  },
   description:
     "Personal portfolio of Aditya Shah — 10+ years scaling WordPress infrastructure, securing production systems, and leading world-class support teams at WPMU DEV.",
   keywords: [
     "Aditya Shah",
-    "WordPress engineer",
-    "DevOps",
-    "Hosting",
-    "WPMU DEV",
-    "WordPress security",
-    "portfolio",
+    "WordPress engineer Aditya Shah",
+    "Aditya Shah DevOps",
+    "Hosting Support Manager",
+    "WPMU DEV Aditya Shah",
+    "WordPress security expert",
+    "Aditya Shah portfolio",
   ],
   authors: [{ name: "Aditya Shah", url: "https://theadityashah.com" }],
+  alternates: {
+    canonical: "https://theadityashah.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adityashah30.github.io/portfolio",
+    url: "https://theadityashah.com",
     title: "Aditya Shah — Hosting Support Manager & DevOps Engineer",
     description:
       "10+ years scaling WordPress infrastructure, securing production systems, and leading high-performance teams.",
@@ -33,7 +40,28 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aditya Shah",
+  "url": "https://theadityashah.com",
+  "jobTitle": "Hosting Support Manager & DevOps Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "WPMU DEV"
+  },
+  "sameAs": [
+    "https://github.com/ethicaladitya",
+    "https://linkedin.com/in/ethicaladitya",
+    "https://adityashah.blog"
+  ]
 };
 
 export default function RootLayout({
@@ -49,6 +77,10 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>{children}</body>

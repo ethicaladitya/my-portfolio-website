@@ -131,7 +131,7 @@ function Footer({ meta }: { meta: MetaData }) {
                 key={link.label}
                 href={link.href}
                 target={link.label !== "Email" ? "_blank" : undefined}
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 className="text-xs font-medium text-gray-500 hover:text-purple-400 transition-colors border border-gray-800 hover:border-purple-500/50 px-3 py-1.5 rounded-lg"
               >
                 {link.label}
