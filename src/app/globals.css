@@ -6,23 +6,23 @@
 
 @layer base {
   :root {
-    --bg: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --primary: #4f46e5;
-    --accent: #0ea5e9;
-    --accent-alt: #8b5cf6;
+    --bg: 255 255 255;
+    --bg-secondary: 248 250 252;
+    --text-primary: 15 23 42;
+    --text-secondary: 71 85 105;
+    --primary: 79 70 229;
+    --accent: 14 165 233;
+    --accent-alt: 139 92 246;
   }
 
   .dark {
-    --bg: #0b0f19;
-    --bg-secondary: #121826;
-    --text-primary: #e5e7eb;
-    --text-secondary: #9ca3af;
-    --primary: #3b82f6;
-    --accent: #22d3ee;
-    --accent-alt: #8b5cf6;
+    --bg: 11 15 25;
+    --bg-secondary: 18 24 38;
+    --text-primary: 229 231 235;
+    --text-secondary: 156 163 175;
+    --primary: 59 130 246;
+    --accent: 34 211 238;
+    --accent-alt: 139 92 246;
   }
 
   html {
@@ -32,7 +32,7 @@
 
   body {
     @apply font-sans antialiased text-text-primary transition-colors duration-300;
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     overflow-x: hidden;
   }
 
@@ -96,8 +96,8 @@
   /* CTA button secondary */
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
-    border-2 border-primary text-primary bg-bg/80 backdrop-blur-sm
-    hover:border-accent hover:bg-bg-secondary hover:shadow-glass
+    border-2 border-primary text-primary bg-background/80 backdrop-blur-sm
+    hover:border-accent hover:bg-background-secondary hover:shadow-glass
     transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
   }
 

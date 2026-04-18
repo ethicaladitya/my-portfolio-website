@@ -14,18 +14,18 @@ const config: Config = {
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
-        bg: {
-          DEFAULT: "var(--bg)",
-          secondary: "var(--bg-secondary)",
+        background: {
+          DEFAULT: "rgb(var(--bg) / <alpha-value>)",
+          secondary: "rgb(var(--bg-secondary) / <alpha-value>)",
         },
         text: {
-          primary: "var(--text-primary)",
-          secondary: "var(--text-secondary)",
+          primary: "rgb(var(--text-primary) / <alpha-value>)",
+          secondary: "rgb(var(--text-secondary) / <alpha-value>)",
         },
-        primary: "var(--primary)",
+        primary: "rgb(var(--primary) / <alpha-value>)",
         accent: {
-          DEFAULT: "var(--accent)",
-          alt: "var(--accent-alt)",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          alt: "rgb(var(--accent-alt) / <alpha-value>)",
         },
       },
       backgroundImage: {
