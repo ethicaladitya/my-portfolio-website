@@ -36,13 +36,7 @@ const iconMap: Record<string, JSX.Element> = {
   ),
 };
 
-const gradients = [
-  "from-primary to-accent",
-  "from-accent to-accent-alt",
-  "from-primary to-accent-alt",
-  "from-accent-alt to-primary",
-  "from-primary via-accent to-accent-alt",
-];
+
 
 interface WhatIDoItem {
   icon: string;

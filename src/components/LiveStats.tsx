@@ -52,11 +52,7 @@ const iconMap: Record<string, JSX.Element> = {
 
 function StatCard({ stat, index, inView }: { stat: Stat; index: number; inView: boolean }) {
   const count = useCountUp(stat.value, inView);
-  const gradients = [
-    "from-primary to-accent",
-    "from-accent to-accent-alt",
-    "from-primary to-accent-alt",
-  ];
+
 
   return (
     <motion.div
