@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import TextReveal from "./TextReveal";
 
 interface HeroV2Props {
   data: {
@@ -34,6 +35,17 @@ export default function HeroV2({ data }: HeroV2Props) {
   const moveX = useTransform(springX, [0, 1000], [-30, 30]);
   const moveY = useTransform(springY, [0, 1000], [-30, 30]);
 
+  // Scroll parallax logic
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scrollYTransform = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
+  const scaleTransform = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
@@ -63,16 +75,16 @@ export default function HeroV2({ data }: HeroV2Props) {
   }, [charIndex, isDeleting, currentRole, roles]);
 
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] flex items-center justify-center overflow-hidden font-sans selection:bg-white selection:text-black">
+    <section ref={containerRef} className="relative min-h-screen bg-[#0a0a0a] flex items-center justify-center overflow-hidden font-sans selection:bg-white selection:text-black">
       {/* Igloo-style Atmospheric Background */}
-      <div className="absolute inset-0 z-0">
+      <motion.div style={{ y: scrollYTransform, opacity: opacityTransform }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03)_0%,transparent_100%)]" />
         <div className="absolute inset-0 bg-noise-pattern opacity-[0.03]" />
-      </div>
+      </motion.div>
 
       {/* Central "Core Object" */}
       <motion.div 
-        style={{ x: moveX, y: moveY }}
+        style={{ x: moveX, y: moveY, scale: scaleTransform, opacity: opacityTransform }}
         className="relative z-10 flex flex-col items-center"
       >
         <div className="relative">
@@ -95,10 +107,8 @@ export default function HeroV2({ data }: HeroV2Props) {
                <span className="font-mono text-[10px] tracking-[0.5em] text-white/40 uppercase block mb-4">
                  {"//"} ENGINEER_CORE_v2.0
                </span>
-               <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-none">
-                 {data.meta.name.split(" ").map((word, i) => (
-                   <span key={i} className="block">{word.toUpperCase()}</span>
-                 ))}
+               <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-none overflow-hidden">
+                 <TextReveal text={data.meta.name.toUpperCase()} />
                </h1>
              </motion.div>
 

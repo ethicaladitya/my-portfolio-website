@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Magnetic from "./Magnetic";
 
 interface NavbarV2Props {
   onToggleRecruiter?: () => void;
@@ -34,23 +35,26 @@ export default function NavbarV2({ onToggleRecruiter }: NavbarV2Props) {
         <div className="flex items-center gap-10">
           <div className="hidden md:flex items-center gap-8">
             {["Services", "Journey", "Impact"].map((link) => (
-              <a 
-                key={link}
-                href={`#${link.toLowerCase().replace(/ /g, "-")}`}
-                className="font-mono text-[9px] tracking-[0.4em] text-white/40 uppercase hover:text-white transition-colors py-2"
-              >
-                {link}
-              </a>
+              <Magnetic key={link}>
+                <a 
+                  href={`#${link.toLowerCase().replace(/ /g, "-")}`}
+                  className="font-mono text-[9px] tracking-[0.4em] text-white/40 uppercase hover:text-white transition-colors py-2 block"
+                >
+                  {link}
+                </a>
+              </Magnetic>
             ))}
           </div>
 
-          <button 
-            onClick={onToggleRecruiter}
-            className="flex items-center gap-3 px-5 py-2.5 border border-white/10 hover:border-white/40 transition-all rounded-sm group"
-          >
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/60 uppercase group-hover:text-white">ACCESS_CORE</span>
-            <div className="w-1.5 h-1.5 bg-white/20 group-hover:bg-white transition-colors" />
-          </button>
+          <Magnetic>
+            <button 
+              onClick={onToggleRecruiter}
+              className="flex items-center gap-3 px-5 py-2.5 border border-white/10 hover:border-white/40 transition-all rounded-sm group font-sans"
+            >
+              <span className="font-mono text-[9px] tracking-[0.3em] text-white/60 uppercase group-hover:text-white">ACCESS_CORE</span>
+              <div className="w-1.5 h-1.5 bg-white/20 group-hover:bg-white transition-colors" />
+            </button>
+          </Magnetic>
         </div>
       </div>
     </nav>

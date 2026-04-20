@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Noise from "@/components/Noise";
+import SmoothScroll from "@/components/v2/SmoothScroll";
+import CustomCursor from "@/components/v2/CustomCursor";
 import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -26,9 +28,14 @@ export default function V2Layout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans selection:bg-primary/30 selection:text-primary-foreground`}>
-      <Noise />
-      {children}
-    </div>
+    <html lang="en">
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans selection:bg-primary/30 selection:text-primary-foreground`}>
+        <SmoothScroll>
+          <Noise />
+          <CustomCursor />
+          {children}
+        </SmoothScroll>
+      </body>
+    </html>
   );
 }

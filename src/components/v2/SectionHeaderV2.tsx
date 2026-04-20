@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TextReveal from "./TextReveal";
 
 interface SectionHeaderV2Props {
   title: string;
@@ -29,7 +30,7 @@ export default function SectionHeaderV2({ title, subtitle, metadata, align = "le
         </div>
         
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-text-primary">
-          {title}
+          <TextReveal text={title} />
         </h2>
         
         {subtitle && (
