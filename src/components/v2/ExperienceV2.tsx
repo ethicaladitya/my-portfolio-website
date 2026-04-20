@@ -65,12 +65,12 @@ export default function ExperienceV2({ items }: { items: ExperienceItem[] }) {
               {/* Sidebar: Year/Status */}
               <div className="w-full md:w-48 flex-shrink-0">
                 <div className="sticky top-10 flex flex-col gap-4">
-                  <div className="font-mono text-[11px] tracking-[0.4em] text-white/30 uppercase">
+                  <div className="font-mono text-[11px] tracking-[0.4em] text-white/60 uppercase">
                     PERIOD [{exp.period}]
                   </div>
                   <div className="h-[2px] w-8 bg-primary/40 group-hover:w-full transition-all duration-700" />
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono text-[9px] tracking-[0.2em] text-white/20 uppercase">STATUS: ARCHIVED</span>
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-white/50 uppercase">STATUS: ARCHIVED</span>
                     <span className="font-mono text-[9px] tracking-[0.2em] text-primary uppercase">CODE: {exp.type.toUpperCase()}</span>
                   </div>
                 </div>
@@ -80,11 +80,11 @@ export default function ExperienceV2({ items }: { items: ExperienceItem[] }) {
               <div className="flex-grow space-y-10">
                 <header className="space-y-4">
                   <h3 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">
-                    {exp.role} <span className="text-white/20">@</span> {exp.company}
+                    {exp.role} <span className="text-white/40">@</span> {exp.company}
                   </h3>
                   <div className="flex items-center gap-4">
                     <div className="w-2 h-2 border border-primary/50 rotate-45" />
-                    <span className="font-mono text-[9px] tracking-[0.3em] text-white/40 uppercase">SYSTEM_ACCESS_GRANTED</span>
+                    <span className="font-mono text-[9px] tracking-[0.3em] text-white/70 uppercase">SYSTEM_ACCESS_GRANTED</span>
                   </div>
                 </header>
 
@@ -92,10 +92,10 @@ export default function ExperienceV2({ items }: { items: ExperienceItem[] }) {
                 <div className="space-y-6">
                   {exp.highlights.map((highlight, j) => (
                     <div key={j} className="flex gap-6 group/log">
-                      <span className="font-mono text-[9px] text-white/20 mt-1 uppercase whitespace-nowrap">
+                      <span className="font-mono text-[9px] text-white/50 mt-1 uppercase whitespace-nowrap">
                         LOG_0{j + 1}
                       </span>
-                      <p className="text-white/60 text-[13px] leading-relaxed font-medium tracking-tight group-hover/log:text-white transition-colors">
+                      <p className="text-white/80 text-[13px] leading-relaxed font-medium tracking-tight group-hover/log:text-white transition-colors">
                         {highlight}
                       </p>
                     </div>
@@ -105,7 +105,7 @@ export default function ExperienceV2({ items }: { items: ExperienceItem[] }) {
                 {/* Tech Stack */}
                 <div className="pt-10 border-t border-white/5 flex flex-wrap gap-x-6 gap-y-3">
                   {exp.stack.map((tech) => (
-                    <span key={tech} className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase hover:text-primary transition-colors cursor-default">
+                    <span key={tech} className="font-mono text-[10px] tracking-[0.2em] text-white/60 uppercase hover:text-primary transition-colors cursor-default">
                       {tech}
                     </span>
                   ))}

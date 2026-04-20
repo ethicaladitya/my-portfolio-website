@@ -61,7 +61,7 @@ export default function WhatIDoV2({ items }: { items: WhatIDoItem[] }) {
             >
               {/* ID Metadata */}
               <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-[9px] tracking-[0.3em] text-white/30 uppercase">
+                <span className="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase">
                   COMPONENT_ID: 0{i + 1}
                 </span>
                 <div className="w-8 h-[1px] bg-white/10" />
@@ -73,7 +73,7 @@ export default function WhatIDoV2({ items }: { items: WhatIDoItem[] }) {
               </h3>
 
               {/* Description */}
-              <p className="text-white/50 text-xs leading-relaxed mb-10 line-clamp-4 font-medium tracking-tight">
+              <p className="text-white/70 text-xs leading-relaxed mb-10 line-clamp-4 font-medium tracking-tight">
                 {item.description}
               </p>
 
@@ -81,7 +81,7 @@ export default function WhatIDoV2({ items }: { items: WhatIDoItem[] }) {
               <div className="mt-auto space-y-6">
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {item.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="font-mono text-[8px] tracking-[0.2em] text-white/30 uppercase">
+                    <span key={tag} className="font-mono text-[8px] tracking-[0.2em] text-white/60 uppercase">
                       [{tag}]
                     </span>
                   ))}

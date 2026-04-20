@@ -52,18 +52,18 @@ export default function TimelineV2({ items }: { items: TimelineItem[] }) {
                          {item.title}
                        </h3>
                     </div>
-                    <span className="font-mono text-[9px] tracking-[0.4em] text-white/20 uppercase whitespace-nowrap">
+                    <span className="font-mono text-[9px] tracking-[0.4em] text-white/50 uppercase whitespace-nowrap">
                        @ {item.company}
                     </span>
                   </header>
 
-                  <p className="text-white/50 text-xs leading-relaxed font-medium tracking-tight max-w-2xl">
+                  <p className="text-white/70 text-xs leading-relaxed font-medium tracking-tight max-w-2xl">
                     {item.description}
                   </p>
 
                   <div className="flex flex-wrap gap-4 pt-2">
                     {item.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-[8px] tracking-[0.2em] text-white/20 uppercase border border-white/5 px-2 py-1">
+                      <span key={tag} className="font-mono text-[8px] tracking-[0.2em] text-white/50 uppercase border border-white/10 px-2 py-1">
                         {tag}
                       </span>
                     ))}
@@ -71,7 +71,7 @@ export default function TimelineV2({ items }: { items: TimelineItem[] }) {
                 </div>
 
                 {/* Index metadata */}
-                <div className="hidden lg:block absolute top-0 right-0 font-mono text-[10px] tracking-[0.4em] text-white/10 uppercase">
+                <div className="hidden lg:block absolute top-0 right-0 font-mono text-[10px] tracking-[0.4em] text-white/40 uppercase">
                    SEQ_0x0{items.length - i}
                 </div>
               </div>

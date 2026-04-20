@@ -32,11 +32,11 @@ export default function LiveStatsV2({ stats }: { stats: Stat[] }) {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="h-[1px] w-4 bg-white/20 group-hover:w-8 group-hover:bg-primary transition-all duration-500" />
-                <span className="font-mono text-[9px] tracking-[0.3em] text-white/40 uppercase group-hover:text-white transition-colors">
+                <div className="h-[1px] w-4 bg-white/40 group-hover:w-8 group-hover:bg-primary transition-all duration-500" />
+                <span className="font-mono text-[9px] tracking-[0.3em] text-white/70 uppercase group-hover:text-white transition-colors">
                   {stat.label.replace(/ /g, "_")}
                 </span>
-                <div className="h-[1px] w-4 bg-white/20 group-hover:w-8 group-hover:bg-primary transition-all duration-500" />
+                <div className="h-[1px] w-4 bg-white/40 group-hover:w-8 group-hover:bg-primary transition-all duration-500" />
               </div>
             </motion.div>
           ))}

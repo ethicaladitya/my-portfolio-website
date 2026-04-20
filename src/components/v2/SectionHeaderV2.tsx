@@ -26,7 +26,7 @@ export default function SectionHeaderV2({ title, subtitle, metadata, align = "le
           <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase">
             {metadata || "////// SYSTEM_STORY"}
           </span>
-          <div className="h-[1px] w-12 bg-primary/20" />
+          <div className="h-[1px] w-12 bg-primary/40" />
         </div>
         
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-text-primary">
@@ -34,7 +34,7 @@ export default function SectionHeaderV2({ title, subtitle, metadata, align = "le
         </h2>
         
         {subtitle && (
-          <p className="text-sm text-text-secondary font-medium tracking-tight mt-2 max-w-2xl opacity-70">
+          <p className="text-sm text-white/70 font-medium tracking-tight mt-2 max-w-2xl">
             {subtitle}
           </p>
         )}

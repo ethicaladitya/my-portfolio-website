@@ -32,7 +32,7 @@ export default function CommunityV2({ items }: { items: CommunityItem[] }) {
               transition={{ duration: 1, delay: i * 0.1 }}
               className="p-8 border-r border-b border-white/10 group hover:bg-white/[0.02] transition-all"
             >
-              <div className="font-mono text-[9px] tracking-[0.3em] text-white/30 uppercase mb-8">
+              <div className="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase mb-8">
                 ENTRY_ID: {i + 1}
               </div>
               
@@ -49,13 +49,13 @@ export default function CommunityV2({ items }: { items: CommunityItem[] }) {
                 <h3 className="text-lg font-bold text-white uppercase tracking-tight">
                   {item.event}
                 </h3>
-                <p className="text-white/50 text-[11px] leading-relaxed font-medium tracking-tight">
+                <p className="text-white/70 text-[11px] leading-relaxed font-medium tracking-tight">
                   {item.description}
                 </p>
               </div>
 
               <div className="mt-8 pt-8 border-t border-white/5">
-                <span className="font-mono text-[9px] tracking-[0.2em] text-white/20 uppercase">
+                <span className="font-mono text-[9px] tracking-[0.2em] text-white/50 uppercase">
                    {item.role} {"//"} {item.years}
                 </span>
               </div>

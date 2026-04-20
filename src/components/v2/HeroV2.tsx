@@ -104,7 +104,7 @@ export default function HeroV2({ data }: HeroV2Props) {
                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                className="mb-6"
              >
-               <span className="font-mono text-[10px] tracking-[0.5em] text-white/40 uppercase block mb-4">
+               <span className="font-mono text-[10px] tracking-[0.5em] text-white/70 uppercase block mb-4">
                  {"//"} ENGINEER_CORE_v2.0
                </span>
                <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-none overflow-hidden">
@@ -119,7 +119,7 @@ export default function HeroV2({ data }: HeroV2Props) {
                className="h-8 flex items-center font-mono text-sm tracking-widest text-white/50 uppercase"
              >
                I build <span className="text-white mx-3">{displayText}</span>
-               <span className="w-1 h-4 bg-white animate-pulse" />
+               <span className="w-1 h-4 bg-white/80 animate-pulse" />
              </motion.div>
           </div>
         </div>
@@ -135,10 +135,10 @@ export default function HeroV2({ data }: HeroV2Props) {
       {/* Top Right: Manifesto */}
       <div className="absolute top-12 right-12 z-20 hidden md:block max-w-[280px]">
         <div className="flex flex-col gap-4 text-right items-end">
-          <span className="font-mono text-[9px] tracking-[0.4em] text-white/40 uppercase">
+          <span className="font-mono text-[9px] tracking-[0.4em] text-white/70 uppercase">
             {"//////"} MANIFESTO
           </span>
-          <p className="text-[11px] leading-relaxed text-white/60 font-medium tracking-tight">
+          <p className="text-[11px] leading-relaxed text-white/80 font-medium tracking-tight">
             High-performance infrastructure is the silent foundation of digital creativity. 
             I engineer resilience into systems so that brands can scale without friction.
           </p>
@@ -150,11 +150,11 @@ export default function HeroV2({ data }: HeroV2Props) {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-white/80 animate-pulse" />
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/50 uppercase">
+            <span className="font-mono text-[9px] tracking-[0.3em] text-white/80 uppercase">
               STATUS: OPTIMAL
             </span>
           </div>
-          <span className="font-mono text-[9px] tracking-[0.3em] text-white/30 uppercase">
+          <span className="font-mono text-[9px] tracking-[0.3em] text-white/60 uppercase">
             {"//"} {data.meta.location.toUpperCase()} {"//"} CV_EST.2014
           </span>
         </div>
@@ -167,7 +167,7 @@ export default function HeroV2({ data }: HeroV2Props) {
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-end gap-3"
         >
-          <span className="font-mono text-[9px] tracking-[0.4em] text-white/40 uppercase">
+          <span className="font-mono text-[9px] tracking-[0.4em] text-white/70 uppercase">
             SCROLL TO EXPLORE
           </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent" />

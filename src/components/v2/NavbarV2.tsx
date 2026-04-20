@@ -27,8 +27,8 @@ export default function NavbarV2({ onToggleRecruiter }: NavbarV2Props) {
           className="flex items-center gap-4"
         >
           <span className="text-xl font-black tracking-tighter text-white">ADITYA<span className="text-white/20">.</span></span>
-          <div className="h-[1px] w-8 bg-white/20 hidden sm:block" />
-          <span className="font-mono text-[8px] tracking-[0.3em] text-white/30 uppercase hidden sm:block">SYSTEM_v2.0</span>
+          <div className="h-[1px] w-8 bg-white/40 hidden sm:block" />
+          <span className="font-mono text-[8px] tracking-[0.3em] text-white/70 uppercase hidden sm:block">SYSTEM_v2.0</span>
         </motion.div>
 
         {/* Links */}
@@ -38,7 +38,7 @@ export default function NavbarV2({ onToggleRecruiter }: NavbarV2Props) {
               <Magnetic key={link}>
                 <a 
                   href={`#${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="font-mono text-[9px] tracking-[0.4em] text-white/40 uppercase hover:text-white transition-colors py-2 block"
+                  className="font-mono text-[9px] tracking-[0.4em] text-white/80 uppercase hover:text-white transition-colors py-2 block"
                 >
                   {link}
                 </a>
@@ -49,10 +49,10 @@ export default function NavbarV2({ onToggleRecruiter }: NavbarV2Props) {
           <Magnetic>
             <button 
               onClick={onToggleRecruiter}
-              className="flex items-center gap-3 px-5 py-2.5 border border-white/10 hover:border-white/40 transition-all rounded-sm group font-sans"
+              className="flex items-center gap-3 px-5 py-2.5 border border-white/20 hover:border-white/60 transition-all rounded-sm group font-sans"
             >
-              <span className="font-mono text-[9px] tracking-[0.3em] text-white/60 uppercase group-hover:text-white">ACCESS_CORE</span>
-              <div className="w-1.5 h-1.5 bg-white/20 group-hover:bg-white transition-colors" />
+              <span className="font-mono text-[9px] tracking-[0.3em] text-white/90 uppercase group-hover:text-white">ACCESS_CORE</span>
+              <div className="w-1.5 h-1.5 bg-white/40 group-hover:bg-white transition-colors" />
             </button>
           </Magnetic>
         </div>
