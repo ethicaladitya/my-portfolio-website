@@ -155,7 +155,7 @@ export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+              transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
               className="md:hidden bg-background/98 backdrop-blur-2xl border-t border-text-secondary/10 shadow-huge"
             >
               <div className="section-container py-8 flex flex-col gap-5">

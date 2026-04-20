@@ -44,7 +44,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.23, 1, 0.32, 1],
+        ease: [0.23, 1, 0.32, 1] as [number, number, number, number],
       },
     },
   };
@@ -160,7 +160,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
               variants={itemVariants}
               whileHover={{ 
                 y: -5,
-                transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1] }
+                transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }
               }}
               className="group bg-background border border-text-secondary/10 rounded-2x overflow-hidden hover:shadow-soft-elevation hover:border-primary/30 transition-all duration-300 flex flex-col h-full"
             >

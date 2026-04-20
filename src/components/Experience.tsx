@@ -34,7 +34,7 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.23, 1, 0.32, 1],
+        ease: [0.23, 1, 0.32, 1] as [number, number, number, number],
       },
     },
   };
@@ -154,5 +154,4 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
       </div>
     </section>
   );
-}
 }

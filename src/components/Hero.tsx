@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
 
 interface HeroProps {
   data: {
@@ -114,7 +114,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-medium mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -125,7 +125,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
             className="text-lg text-text-secondary font-medium mb-4"
           >
             {data.hero.greeting}
@@ -141,7 +141,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
                 transition={{
                   duration: 0.8,
                   delay: 0.2 + i * 0.04,
-                  ease: [0.16, 1, 0.3, 1]
+                  ease: [0.16, 1, 0.3, 1] as [number, number, number, number]
                 }}
                 className="gradient-text inline-block"
               >
@@ -154,7 +154,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.6, delay: 0.8, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
             className="text-2xl sm:text-3xl font-bold text-text-primary mb-8 h-10 flex items-center gap-1"
           >
             I build <span className="gradient-text ml-2">{displayText}</span>
@@ -165,7 +165,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.9, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.7, delay: 0.9, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
             className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl mb-12"
           >
             {data.meta.tagline}
@@ -175,7 +175,7 @@ export default function Hero({ data, onOpenQR }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.1, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.7, delay: 1.1, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }}
             className="flex flex-wrap items-center gap-4"
           >
             <a 
