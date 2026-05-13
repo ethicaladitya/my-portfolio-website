@@ -56,7 +56,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
         const res = await fetch("https://adityashah.blog/wp-json/wp/v2/posts?per_page=3");
         if (!res.ok) throw new Error("Failed to fetch");
         const wpPosts = await res.json();
-        
+
         const mappedPosts: BlogPost[] = wpPosts.map((wp: { title?: { rendered: string }; link: string; excerpt?: { rendered: string }; content?: { rendered: string }; date?: string; class_list?: string[] }, i: number) => {
           let category = "Article";
           const catClass = wp.class_list?.find((c: string) => c.startsWith("category-"));
@@ -64,7 +64,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             category = catClass.replace("category-", "").replace(/-/g, " ");
             category = category.charAt(0).toUpperCase() + category.slice(1);
           }
-          
+
           const decodeEntities = (html: string) => {
             if (typeof document === 'undefined') return html;
             const txt = document.createElement("textarea");
@@ -74,7 +74,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
 
           const rawExcerpt = wp.excerpt?.rendered || "";
           const cleanExcerpt = decodeEntities(rawExcerpt.replace(/<[^>]+>/g, "").replace(/&hellip;/g, "...").trim());
-          
+
           const wordCount = (wp.content?.rendered || "").replace(/<[^>]+>/g, "").split(/\s+/).length;
           const mins = Math.max(1, Math.ceil(wordCount / 200));
 
@@ -94,7 +94,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             gradient: fallbackGradients[i % fallbackGradients.length],
           };
         });
-        
+
         if (mappedPosts.length > 0) setLivePosts(mappedPosts);
       } catch (err) {
         console.error("Failed to load live blog posts:", err);
@@ -130,7 +130,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             </p>
           </div>
           <a
-            href="https://blog.theadityashah.com"
+            href="https://adityashah.blog"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-sm font-bold text-primary transition-all pr-4"
@@ -142,7 +142,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
           </a>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           ref={containerRef}
           variants={containerVariants}
           initial="hidden"
@@ -158,7 +158,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             <motion.article
               key={i}
               variants={itemVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -5,
                 transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] }
               }}
