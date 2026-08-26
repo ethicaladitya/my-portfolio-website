@@ -34,6 +34,9 @@ interface ContentData {
   experience: { role: string; company: string; period: string; type: string; remote: boolean; highlights: string[]; stack: string[] }[];
   community: { event: string; role: string; years: string; impact: string; impactLabel: string; description: string; icon: string }[];
   blog: { title: string; slug: string; category: string; excerpt: string; readTime: string; date: string; gradient: string }[];
+  summary: string;
+  skills: { category: string; items: string[] }[];
+  contributions: string[];
 }
 
 export default function Home() {

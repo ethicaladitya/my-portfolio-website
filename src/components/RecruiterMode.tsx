@@ -14,6 +14,11 @@ interface ResumeData {
     linkedin: string;
     location: string;
   };
+  summary: string;
+  skills: Array<{
+    category: string;
+    items: string[];
+  }>;
   experience: Array<{
     role: string;
     company: string;
@@ -28,6 +33,7 @@ interface ResumeData {
     impact: string;
     impactLabel: string;
   }>;
+  contributions: string[];
 }
 
 export default function RecruiterMode({
@@ -122,42 +128,28 @@ export default function RecruiterMode({
             <section>
               <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Professional Summary</h2>
               <p className="text-text-primary leading-relaxed text-sm">
-                Engineering manager and DevOps practitioner with 10+ years in the WordPress hosting ecosystem.
-                Currently leading the Hosting Support division at WPMU DEV — managing distributed teams,
-                owning incident response for large-scale production outages, performing malware cleanup and
-                security hardening on live sites, and building automation that scales ops workflows. Active
-                community contributor: WordCamp speaker, GDG DevFest presenter, and WordPress workshop facilitator.
+                {data.summary}
               </p>
             </section>
 
             {/* Core Skills */}
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Core Competencies</h2>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "WordPress Infrastructure",
-                  "Linux Server Administration",
-                  "Security Hardening",
-                  "Malware Cleanup",
-                  "Incident Response",
-                  "PHP / MySQL Debugging",
-                  "Nginx / Apache",
-                  "Ansible Automation",
-                  "Team Leadership",
-                  "Hiring & Mentoring",
-                  "Docker",
-                  "Bash Scripting",
-                  "Performance Optimization",
-                  "Public Speaking",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs font-medium px-3 py-1 bg-primary/5 border border-primary/20 text-primary rounded-lg"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Core Competencies</h2>
+              {data.skills.map((cat) => (
+                <div key={cat.category} className="mb-4">
+                  <h3 className="text-sm font-bold text-text-primary mb-2">{cat.category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium px-3 py-1 bg-primary/5 border border-primary/20 text-primary rounded-lg"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </section>
 
             {/* Experience */}
@@ -201,12 +193,29 @@ export default function RecruiterMode({
                       <span className="font-semibold text-text-primary">{c.event}</span>
                       <span className="text-text-secondary ml-2">— {c.role}</span>
                     </div>
-                    <div className="text-text-secondary/60 text-xs mt-1 sm:mt-0">
-                      {c.years} · {c.impact} {c.impactLabel}
-                    </div>
+                    {(c.years || c.impact) && (
+                      <div className="text-text-secondary/60 text-xs mt-1 sm:mt-0">
+                        {c.years && <span>{c.years}</span>}
+                        {c.years && c.impact && <span> · </span>}
+                        {c.impact && <span>{c.impact} {c.impactLabel}</span>}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
+            </section>
+
+            {/* Contributions */}
+            <section>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Contributions & Open Source</h2>
+              <ul className="space-y-1.5">
+                {data.contributions.map((c, i) => (
+                  <li key={i} className="text-sm text-text-secondary flex items-start gap-2">
+                    <span className="text-primary mt-0.5 flex-shrink-0">▸</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </section>
 
             {/* Footer note */}
