@@ -13,7 +13,7 @@ const navLinks = [
   { label: "Timeline", href: "#timeline" },
   { label: "Experience", href: "#experience" },
   { label: "Community", href: "#community" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "https://adityashah.blog" },
 ];
 
 export default function Navbar({ recruiterMode, onToggleRecruiter }: NavbarProps) {
