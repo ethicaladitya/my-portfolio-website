@@ -32,6 +32,7 @@ interface ContentData {
   whatIDo: { icon: string; title: string; description: string; tags: string[] }[];
   timeline: { year: string; title: string; company: string; description: string; tags: string[] }[];
   experience: { role: string; company: string; period: string; type: string; remote: boolean; highlights: string[]; stack: string[] }[];
+  tools: { name: string; description: string; url: string }[];
   community: { event: string; role: string; years: string; impact: string; impactLabel: string; description: string; icon: string }[];
   blog: { title: string; slug: string; category: string; excerpt: string; readTime: string; date: string; gradient: string }[];
   summary: string;

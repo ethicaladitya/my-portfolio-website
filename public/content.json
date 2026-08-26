@@ -460,5 +460,22 @@
   "WP-CLI: open-source contributor to the WordPress command-line tool",
   "WordPress.org: active community member and speaker",
   "GitHub: public engineering work and tooling at github.com/ethicaladitya"
+ ],
+ "tools": [
+  {
+   "name": "Log Analyzer",
+   "description": "Internal log analysis tool that parses hosting access and error logs to speed up incident diagnosis and customer investigations.",
+   "url": "https://loganalyzer.theadityashah.com"
+  },
+  {
+   "name": "AI Malware Analyzer (WordPress)",
+   "description": "Gemini-powered malware triage that classifies suspicious files on compromised sites, accelerating cleanup and forensics work (write-up with architecture and results).",
+   "url": "https://adityashah.blog/ai-powered-malware-triage-using-gemini-to-classify-suspicious-wordpress-files/"
+  },
+  {
+   "name": "Hosting Ops Automation (Gemini + Ansible)",
+   "description": "Automation pairing Gemini with Ansible playbooks to cut repetitive hosting support workflows, from health checks to escalations.",
+   "url": "https://adityashah.blog/automating-hosting-support-ops-with-gemini-ansible/"
+  }
  ]
 }

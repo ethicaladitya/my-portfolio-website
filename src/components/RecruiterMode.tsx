@@ -26,6 +26,11 @@ interface ResumeData {
     highlights: string[];
     stack: string[];
   }>;
+  tools: Array<{
+    name: string;
+    description: string;
+    url: string;
+  }>;
   community: Array<{
     event: string;
     role: string;
@@ -181,6 +186,27 @@ export default function RecruiterMode({
                   </div>
                 </div>
               ))}
+            </section>
+
+            {/* Work Tools */}
+            <section>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Work Tools & AI Automation</h2>
+              <div className="space-y-4">
+                {data.tools.map((t, i) => (
+                  <div key={i}>
+                    <h3 className="text-sm font-bold text-text-primary">
+                      {t.url ? (
+                        <a href={t.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                          {t.name} ↗
+                        </a>
+                      ) : (
+                        t.name
+                      )}
+                    </h3>
+                    <p className="text-sm text-text-secondary mt-0.5 leading-relaxed">{t.description}</p>
+                  </div>
+                ))}
+              </div>
             </section>
 
             {/* Community */}
