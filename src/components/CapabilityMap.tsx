@@ -1,0 +1,4 @@
+export default function CapabilityMap() {
+  const nodes = [{ label: "Customers", note: "clarity & ownership", className: "node-customers" }, { label: "Infrastructure", note: "Linux · Nginx · MySQL", className: "node-infra" }, { label: "Operations", note: "incidents · automation", className: "node-ops" }, { label: "WordPress", note: "security · performance", className: "node-wp" }];
+  return <div className="capability-map" aria-label="Aditya works at the intersection of customers, infrastructure, operations, and WordPress"><div className="map-orbit orbit-one" aria-hidden="true" /><div className="map-orbit orbit-two" aria-hidden="true" /><div className="map-core"><span>ADITYA</span><strong>Lead</strong><small>Diagnose · Coordinate · Build</small></div>{nodes.map((node, index) => <div className={`map-node ${node.className}`} key={node.label}><span>0{index + 1}</span><strong>{node.label}</strong><small>{node.note}</small></div>)}</div>;
+}
