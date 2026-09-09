@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "name": "Aditya Shah",
+    "title": "Hosting Support Manager & DevOps Engineer",
+    "company": "WPMU DEV (Incsub LLC)",
+    "location": "Bhopal, India \u00b7 Working globally",
+    "email": "hi@theadityashah.com",
+    "Blog": "https://adityashah.blog",
+    "website": "https://theadityashah.com/",
+    "github": "https://github.com/ethicaladitya",
+    "linkedin": "https://linkedin.com/in/ethicaladitya",
+    "tagline": "I connect the people, systems, and decisions that keep production moving."
+  },
+  "hero": {
+    "greeting": "Aditya Shah",
+    "roles": [
+      "Technical leadership",
+      "WordPress infrastructure",
+      "Production operations"
+    ],
+    "description": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV, working hands-on across Linux system administration, infrastructure, incidents, security, automation, and AI engineering."
+  },
+  "stats": [
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "years in WordPress",
+      "detail": "Working with WordPress since 2014"
+    },
+    {
+      "value": 8,
+      "suffix": "+",
+      "label": "years at WPMU DEV",
+      "detail": "Hosting support & production operations"
+    },
+    {
+      "value": 100,
+      "suffix": "+",
+      "label": "community events",
+      "detail": "Meetups, workshops & community gatherings"
+    },
+    {
+      "value": 1500,
+      "suffix": "+",
+      "label": "students reached",
+      "detail": "Through WP Build Tour"
+    }
+  ],
+  "whatIDo": [
+    {
+      "title": "Lead the team. Own the customer experience.",
+      "description": "Manage distributed hosting support engineers, own critical escalations, and keep customers informed. Hire, mentor, review quality, and turn recurring problems into better processes.",
+      "tags": [
+        "Distributed teams",
+        "Technical CX",
+        "Hiring & mentoring",
+        "SOPs"
+      ]
+    },
+    {
+      "title": "Find the problem beneath the symptom.",
+      "description": "Trace production issues across Linux, Nginx, PHP-FPM, and MySQL/MariaDB. Bring logs, observability, root cause analysis, and cross-team coordination together during incidents.",
+      "tags": [
+        "Linux / SysAdmin",
+        "Incident response",
+        "Log analysis",
+        "Escalation ownership"
+      ]
+    },
+    {
+      "title": "Make WordPress more reliable.",
+      "description": "Troubleshoot architecture, multisite, WooCommerce, plugin conflicts, and migrations. Tune caching, DNS, CDN, and database behavior around the actual workload.",
+      "tags": [
+        "WP-CLI",
+        "Cloudflare",
+        "Performance",
+        "Migrations"
+      ]
+    },
+    {
+      "title": "Investigate. Clean up. Harden.",
+      "description": "Investigate compromised WordPress sites, review suspicious files, and support recovery. Address infection vectors, firewall rules, brute-force mitigation, and vulnerability remediation.",
+      "tags": [
+        "Malware investigation",
+        "WAF rules",
+        "Hardening",
+        "Security operations"
+      ]
+    },
+    {
+      "title": "Turn repeated work into useful tools.",
+      "description": "Build Bash scripts, Ansible workflows, REST API integrations, and internal tools. Use AI-assisted engineering to support investigation, documentation, and operational decisions.",
+      "tags": [
+        "Ansible / Bash",
+        "REST APIs",
+        "AI-assisted workflows",
+        "Git / Docker"
+      ]
+    }
+  ],
+  "timeline": [],
+  "experience": [
+    {
+      "role": "Hosting Support Manager & DevOps Engineer",
+      "company": "WPMU DEV (Incsub LLC)",
+      "period": "2018 \u2013 Present",
+      "type": "Full-time",
+      "remote": true,
+      "highlights": [
+        "Lead a distributed hosting support team, with responsibility for hiring, mentoring, quality, SOPs, and knowledge systems.",
+        "Own critical customer escalations and coordinate production incident response across teams.",
+        "Debug Linux, Nginx, PHP, MySQL/MariaDB, WordPress, DNS, and caching issues; investigate compromised sites and support remediation.",
+        "Build automation and internal tooling with Ansible, Bash, REST APIs, and AI-assisted workflows."
+      ],
+      "stack": [
+        "WordPress",
+        "Linux",
+        "Nginx",
+        "MySQL",
+        "PHP",
+        "Ansible",
+        "Docker",
+        "Git",
+        "Bash"
+      ],
+      "note": "Current role shown; tenure includes earlier hosting support responsibilities."
+    },
+    {
+      "role": "Happiness Engineer",
+      "company": "StoreApps",
+      "period": "2018",
+      "type": "Full-time",
+      "remote": true,
+      "highlights": [
+        "Supported WooCommerce customers through plugin conflicts, PHP errors, and configuration issues; worked with developers on bug reports."
+      ],
+      "stack": [
+        "WordPress",
+        "WooCommerce",
+        "PHP",
+        "Customer Support"
+      ]
+    },
+    {
+      "role": "WordPress Developer",
+      "company": "Freelance",
+      "period": "2014 \u2013 2018",
+      "type": "Full-time",
+      "remote": true,
+      "highlights": [
+        "Built and maintained WordPress websites, configured hosting, and resolved plugin, PHP, and performance issues for clients."
+      ],
+      "stack": [
+        "WordPress",
+        "PHP",
+        "MySQL",
+        "Hosting"
+      ]
+    }
+  ],
+  "community": [
+    {
+      "event": "WordPress Bhopal",
+      "role": "Organizer since 2015",
+      "years": "2015 \u2014 present",
+      "description": "Building a consistent space for developers, site owners, and new contributors to learn together. 100+ meetups and community events over the years."
+    },
+    {
+      "event": "WordCamp",
+      "role": "Speaker & organizer",
+      "years": "Across multiple years",
+      "description": "Speaking and organizing involvement across WordCamps, including WordCamp Bhopal 2025 and the WordCamp Asia 2026 operations team."
+    },
+    {
+      "event": "WP Build Tour",
+      "role": "Developer education",
+      "years": "1,500+ students reached",
+      "description": "Hands-on workshops introducing students to WordPress and open source."
+    },
+    {
+      "event": "GDG / GDG Cloud Bhopal",
+      "role": "Community & events",
+      "years": "Local developer ecosystem",
+      "description": "Contributing to community programs and events that bring technical people together."
+    }
+  ],
+  "blog": [
+    {
+      "title": "Decoupling AI Automation from WordPress: Designing Async HTTP REST Workers",
+      "slug": "https://adityashah.blog/decoupling-ai-automation-wordpress-async-rest-workers/",
+      "category": "AI & Automation",
+      "excerpt": "Separating long-running AI workflows from synchronous WordPress requests.",
+      "date": "2026-09-06"
+    },
+    {
+      "title": "WordPress REST API Basic Auth Error: How to Find the Real Cause",
+      "slug": "https://adityashah.blog/wordpress-rest-api-basic-authentication-error/",
+      "category": "WordPress",
+      "excerpt": "Tracing authentication errors across WordPress, browser sessions, and proxies.",
+      "date": "2026-09-03"
+    },
+    {
+      "title": "Best Managed WordPress Hosting in 2026: A Pro\u2019s Guide to Speed, Security, and Scale",
+      "slug": "https://adityashah.blog/best-managed-wordpress-hosting-in-2026-a-pros-guide-to-speed-security-and-scale/",
+      "category": "Infrastructure",
+      "excerpt": "Evaluating hosting through performance, security, and operational needs.",
+      "date": "2026-09-02"
+    }
+  ],
+  "summary": "Hosting Support Manager / DevOps Engineer at WPMU DEV, combining distributed team leadership with hands-on WordPress infrastructure and production operations. I own customer escalations, coordinate incidents, investigate security issues, and build automation and internal tooling. My work connects technical problem-solving with clear communication, stronger teams, and better customer experiences.",
+  "skills": [
+    {
+      "category": "Infrastructure & WordPress",
+      "items": [
+        "Linux",
+        "Nginx / Apache",
+        "PHP-FPM",
+        "MySQL / MariaDB",
+        "DNS / CDN / Cloudflare",
+        "Caching / ZFS",
+        "WordPress / WP-CLI",
+        "Multisite / WooCommerce",
+        "Migrations / Performance"
+      ]
+    },
+    {
+      "category": "Operations & security",
+      "items": [
+        "Incident response",
+        "Production debugging",
+        "Observability / Log analysis",
+        "Root cause analysis",
+        "Malware investigation",
+        "Hardening / WAF",
+        "Vulnerability remediation"
+      ]
+    },
+    {
+      "category": "Automation & tooling",
+      "items": [
+        "Ansible",
+        "Bash",
+        "Git / Docker",
+        "REST APIs",
+        "Internal tools",
+        "AI-assisted operations"
+      ]
+    },
+    {
+      "category": "Leadership & technical CX",
+      "items": [
+        "Distributed teams",
+        "Hiring / Mentoring",
+        "Quality / SOPs",
+        "Escalation management",
+        "Incident communication",
+        "Documentation",
+        "Cross-team coordination"
+      ]
+    }
+  ],
+  "contributions": [
+    "WP-CLI: open-source contributor to the WordPress command-line tool",
+    "WordPress.org: active community member and speaker",
+    "GitHub: public engineering work and tooling at github.com/ethicaladitya"
+  ],
+  "speaking": {
+    "headline": "From production systems to the stage.",
+    "summary": "I share practical lessons drawn from hands-on WordPress operations, helping developers and site owners make complex systems easier to understand and run.",
+    "events": [
+      "WordCamp Asia",
+      "WordCamp Nepal",
+      "WordCamp Kochi",
+      "WordCamp Mumbai"
+    ],
+    "topics": [
+      "Performance optimization",
+      "Hosting infrastructure",
+      "WP-CLI"
+    ]
+  },
+  "tools": [
+    {
+      "name": "Making logs easier to investigate.",
+      "shortName": "Log Analyzer",
+      "category": "01 / Investigation tooling",
+      "description": "A public log analysis tool for exploring access and error logs during hosting investigations. Built around the practical work of diagnosing a problem.",
+      "url": "https://loganalyzer.theadityashah.com",
+      "label": "Explore Log Analyzer",
+      "tags": [
+        "Log analysis",
+        "Production debugging"
+      ],
+      "visual": "logs"
+    },
+    {
+      "name": "AI-assisted malware triage.",
+      "shortName": "AI Malware Analyzer",
+      "category": "02 / Security workflows",
+      "description": "A public AI-assisted tool for classifying suspicious WordPress files and supporting human malware investigation. AI provides another signal in the review process.",
+      "url": "https://malwareanalyser.theadityashah.com/",
+      "label": "Open AI Malware Analyzer",
+      "tags": [
+        "WordPress security",
+        "Gemini"
+      ],
+      "visual": "security"
+    },
+    {
+      "name": "Less repetition. More engineering.",
+      "shortName": "Hosting Ops Automation",
+      "category": "03 / Operational automation",
+      "description": "A practical write-up on combining Gemini and Ansible for hosting support operations, turning recurring tasks into repeatable workflows.",
+      "url": "https://adityashah.blog/automating-hosting-support-ops-with-gemini-ansible/",
+      "label": "Read the automation write-up",
+      "tags": [
+        "Ansible",
+        "AI-assisted operations"
+      ],
+      "visual": "automation"
+    }
+  ],
+  "roleFit": [
+    "Support Engineering / Technical Support Management",
+    "DevOps / Linux / Hosting & Platform Operations",
+    "AI Engineering / AI-assisted Operations & Tooling",
+    "Technical CX / Customer Engineering / Technical Account Management",
+    "WordPress Infrastructure / Security Operations",
+    "Developer Advocate / Community Lead / Developer Relations"
+  ]
+}
