@@ -4,7 +4,7 @@
     "title": "Hosting Support Manager & DevOps Engineer",
     "company": "WPMU DEV (Incsub LLC)",
     "location": "Bhopal, India \u00b7 Working globally",
-    "email": "hi@adityashah.dev",
+    "email": "hi@theadityashah.com",
     "Blog": "https://adityashah.blog",
     "website": "https://theadityashah.com/",
     "github": "https://github.com/ethicaladitya",
@@ -18,7 +18,7 @@
       "WordPress infrastructure",
       "Production operations"
     ],
-    "description": "Hosting Support Manager / DevOps Engineer at WPMU DEV. I lead distributed support engineers and stay hands-on with infrastructure, incidents, security, and automation."
+    "description": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV, working hands-on across Linux system administration, infrastructure, incidents, security, automation, and AI engineering."
   },
   "stats": [
     {
@@ -264,6 +264,21 @@
     "WordPress.org: active community member and speaker",
     "GitHub: public engineering work and tooling at github.com/ethicaladitya"
   ],
+  "speaking": {
+    "headline": "From production systems to the stage.",
+    "summary": "I share practical lessons drawn from hands-on WordPress operations, helping developers and site owners make complex systems easier to understand and run.",
+    "events": [
+      "WordCamp Asia",
+      "WordCamp Nepal",
+      "WordCamp Kochi",
+      "WordCamp Mumbai"
+    ],
+    "topics": [
+      "Performance optimization",
+      "Hosting infrastructure",
+      "WP-CLI"
+    ]
+  },
   "tools": [
     {
       "name": "Making logs easier to investigate.",
@@ -282,9 +297,9 @@
       "name": "AI-assisted malware triage.",
       "shortName": "AI Malware Analyzer",
       "category": "02 / Security workflows",
-      "description": "A published workflow using Gemini to classify suspicious WordPress files and support human investigation. AI provides another signal in the review process.",
-      "url": "https://adityashah.blog/ai-powered-malware-triage-using-gemini-to-classify-suspicious-wordpress-files/",
-      "label": "Read the malware triage write-up",
+      "description": "A public AI-assisted tool for classifying suspicious WordPress files and supporting human malware investigation. AI provides another signal in the review process.",
+      "url": "https://malwareanalyser.theadityashah.com/",
+      "label": "Open AI Malware Analyzer",
       "tags": [
         "WordPress security",
         "Gemini"
@@ -308,8 +323,9 @@
   "roleFit": [
     "Support Engineering / Technical Support Management",
     "DevOps / Linux / Hosting & Platform Operations",
+    "AI Engineering / AI-assisted Operations & Tooling",
     "Technical CX / Customer Engineering / Technical Account Management",
     "WordPress Infrastructure / Security Operations",
-    "Technical Community / Developer Relations"
+    "Developer Advocate / Community Lead / Developer Relations"
   ]
 }
