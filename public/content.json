@@ -1,22 +1,22 @@
 {
   "meta": {
     "name": "Aditya Shah",
-    "title": "Technical Leadership · Cloud Infrastructure · Applied AI",
+    "title": "Hosting Support Manager & DevOps Engineer",
     "company": "WPMU DEV (Incsub LLC)",
-    "location": "Bhopal, India · Working globally",
-    "email": "hi@theadityashah.com",
+    "location": "Bhopal, India \u00b7 Working globally",
+    "email": "hi@adityashah.dev",
     "Blog": "https://adityashah.blog",
     "website": "https://theadityashah.com/",
     "github": "https://github.com/ethicaladitya",
     "linkedin": "https://linkedin.com/in/ethicaladitya",
-    "tagline": "I lead technical teams, solve production problems, and build useful automation."
+    "tagline": "I connect the people, systems, and decisions that keep production moving."
   },
   "hero": {
     "greeting": "Aditya Shah",
     "roles": [
       "Technical leadership",
-      "Cloud infrastructure",
-      "Applied AI"
+      "WordPress infrastructure",
+      "Production operations"
     ],
     "description": "Hosting Support Manager / DevOps Engineer at WPMU DEV. I lead distributed support engineers and stay hands-on with infrastructure, incidents, security, and automation."
   },
@@ -48,53 +48,53 @@
   ],
   "whatIDo": [
     {
-      "title": "Lead technical teams. Own the difficult conversations.",
-      "description": "Lead distributed hosting support engineers, mentor the team, review quality, and own complex customer escalations. Turn recurring issues into clearer processes and better documentation.",
+      "title": "Lead the team. Own the customer experience.",
+      "description": "Manage distributed hosting support engineers, own critical escalations, and keep customers informed. Hire, mentor, review quality, and turn recurring problems into better processes.",
       "tags": [
-        "Team leadership",
-        "Customer engineering",
-        "Mentoring",
+        "Distributed teams",
+        "Technical CX",
+        "Hiring & mentoring",
+        "SOPs"
+      ]
+    },
+    {
+      "title": "Find the problem beneath the symptom.",
+      "description": "Trace production issues across Linux, Nginx, PHP-FPM, and MySQL/MariaDB. Bring logs, observability, root cause analysis, and cross-team coordination together during incidents.",
+      "tags": [
+        "Linux / SysAdmin",
+        "Incident response",
+        "Log analysis",
         "Escalation ownership"
       ]
     },
     {
-      "title": "Find the cause behind a production problem.",
-      "description": "Investigate issues across Linux, Nginx, PHP-FPM, MySQL/MariaDB, DNS, and caching. Connect logs and observability with the customer’s experience, then coordinate the next steps.",
+      "title": "Make WordPress more reliable.",
+      "description": "Troubleshoot architecture, multisite, WooCommerce, plugin conflicts, and migrations. Tune caching, DNS, CDN, and database behavior around the actual workload.",
       "tags": [
-        "Linux",
-        "Incident response",
-        "Cloud infrastructure",
-        "Root cause analysis"
-      ]
-    },
-    {
-      "title": "Build AI workflows with useful, checkable outputs.",
-      "description": "Use LLM APIs, structured outputs, and tool integrations for practical investigation and automation. Keep the reasoning visible and human judgment part of the workflow.",
-      "tags": [
-        "LLM APIs",
-        "Structured outputs",
-        "AI workflows",
-        "REST APIs"
-      ]
-    },
-    {
-      "title": "Make WordPress more reliable and secure.",
-      "description": "Debug performance, multisite, WooCommerce, migrations, and plugin conflicts. Investigate compromised sites, support recovery, and address the conditions that let problems return.",
-      "tags": [
-        "WordPress / WP-CLI",
-        "Security investigation",
+        "WP-CLI",
         "Cloudflare",
-        "Performance"
+        "Performance",
+        "Migrations"
       ]
     },
     {
-      "title": "Turn repeated work into reusable tools.",
-      "description": "Build Bash scripts, Ansible workflows, and internal tools around real operational tasks. Document the decisions so the next engineer has a better starting point.",
+      "title": "Investigate. Clean up. Harden.",
+      "description": "Investigate compromised WordPress sites, review suspicious files, and support recovery. Address infection vectors, firewall rules, brute-force mitigation, and vulnerability remediation.",
       "tags": [
-        "Bash / Ansible",
-        "Python / PHP",
-        "Automation",
-        "Documentation"
+        "Malware investigation",
+        "WAF rules",
+        "Hardening",
+        "Security operations"
+      ]
+    },
+    {
+      "title": "Turn repeated work into useful tools.",
+      "description": "Build Bash scripts, Ansible workflows, REST API integrations, and internal tools. Use AI-assisted engineering to support investigation, documentation, and operational decisions.",
+      "tags": [
+        "Ansible / Bash",
+        "REST APIs",
+        "AI-assisted workflows",
+        "Git / Docker"
       ]
     }
   ],
@@ -103,7 +103,7 @@
     {
       "role": "Hosting Support Manager & DevOps Engineer",
       "company": "WPMU DEV (Incsub LLC)",
-      "period": "Feb 2019 – Present",
+      "period": "Feb 2019 \u2013 Present",
       "type": "Full-time",
       "remote": true,
       "highlights": [
@@ -123,7 +123,7 @@
         "Git",
         "Bash"
       ],
-      "note": "Company tenure since February 2019; current title shown, without implying it was held throughout."
+      "note": "Current role shown; tenure includes earlier hosting support responsibilities."
     },
     {
       "role": "Happiness Engineer",
@@ -144,7 +144,7 @@
     {
       "role": "WordPress Developer",
       "company": "Freelance",
-      "period": "2014 – 2018",
+      "period": "2014 \u2013 2018",
       "type": "Full-time",
       "remote": true,
       "highlights": [
@@ -162,14 +162,14 @@
     {
       "event": "WordPress Bhopal",
       "role": "Organizer since 2015",
-      "years": "Started in 2015",
-      "description": "Started with a meetup at my home in Bhopal. Over the years, it grew into 100+ meetups and community events connecting students, developers, site owners, and new contributors."
+      "years": "2015 \u2014 present",
+      "description": "Building a consistent space for developers, site owners, and new contributors to learn together. 100+ meetups and community events over the years."
     },
     {
       "event": "WordCamp",
       "role": "Speaker & organizer",
       "years": "Across multiple years",
-      "description": "Speaker and organizer across WordCamps, including WordCamp Bhopal 2025 and the WordCamp Asia 2026 operations team."
+      "description": "Speaking and organizing involvement across WordCamps, including WordCamp Bhopal 2025 and the WordCamp Asia 2026 operations team."
     },
     {
       "event": "WP Build Tour",
@@ -178,10 +178,10 @@
       "description": "Hands-on workshops introducing students to WordPress and open source."
     },
     {
-      "event": "GDG Cloud Bhopal",
-      "role": "Organizer",
+      "event": "GDG / GDG Cloud Bhopal",
+      "role": "Community & events",
       "years": "Local developer ecosystem",
-      "description": "Organize DevFest, Cloud Community Day, and hands-on AI workshops in Bhopal, helping people learn together and turn ideas into working projects."
+      "description": "Contributing to community programs and events that bring technical people together."
     }
   ],
   "blog": [
@@ -193,34 +193,22 @@
       "date": "2026-09-06"
     },
     {
-      "title": "AI-Powered Malware Triage: Using Gemini to Classify Suspicious WordPress Files",
-      "slug": "https://adityashah.blog/ai-powered-malware-triage-using-gemini/",
-      "category": "AI & Security",
-      "excerpt": "Structured verdicts, observable indicators, and human review for suspicious WordPress files.",
-      "date": "2026-08-15"
-    },
-    {
       "title": "WordPress REST API Basic Auth Error: How to Find the Real Cause",
       "slug": "https://adityashah.blog/wordpress-rest-api-basic-authentication-error/",
       "category": "WordPress",
       "excerpt": "Tracing authentication errors across WordPress, browser sessions, and proxies.",
       "date": "2026-09-03"
+    },
+    {
+      "title": "Best Managed WordPress Hosting in 2026: A Pro\u2019s Guide to Speed, Security, and Scale",
+      "slug": "https://adityashah.blog/best-managed-wordpress-hosting-in-2026-a-pros-guide-to-speed-security-and-scale/",
+      "category": "Infrastructure",
+      "excerpt": "Evaluating hosting through performance, security, and operational needs.",
+      "date": "2026-09-02"
     }
   ],
-  "summary": "I lead Hosting Support at WPMU DEV and stay hands-on with the production problems behind customer escalations. My work connects distributed team leadership, Linux and WordPress infrastructure, security investigations, automation, and clear technical communication. I also build and write about practical AI workflows, with a focus on structured outputs and human review.",
+  "summary": "Hosting Support Manager / DevOps Engineer at WPMU DEV, combining distributed team leadership with hands-on WordPress infrastructure and production operations. I own customer escalations, coordinate incidents, investigate security issues, and build automation and internal tooling. My work connects technical problem-solving with clear communication, stronger teams, and better customer experiences.",
   "skills": [
-    {
-      "category": "Applied AI & automation",
-      "items": [
-        "LLM APIs",
-        "Structured outputs",
-        "Prompt design",
-        "Tool integrations",
-        "Human-reviewed AI workflows",
-        "Python",
-        "REST APIs"
-      ]
-    },
     {
       "category": "Infrastructure & WordPress",
       "items": [
@@ -278,59 +266,50 @@
   ],
   "tools": [
     {
-      "name": "Log Analyzer",
+      "name": "Making logs easier to investigate.",
       "shortName": "Log Analyzer",
       "category": "01 / Investigation tooling",
-      "description": "A public tool for exploring access and error logs during hosting investigations.",
+      "description": "A public log analysis tool for exploring access and error logs during hosting investigations. Built around the practical work of diagnosing a problem.",
       "url": "https://loganalyzer.theadityashah.com",
       "label": "Explore Log Analyzer",
       "tags": [
         "Log analysis",
         "Production debugging"
       ],
-      "visual": "logs",
-      "challenge": "Finding a useful signal in noisy production logs.",
-      "approach": "Built a log analysis tool around the practical work of investigating hosting problems.",
-      "proof": "Explore the working tool."
+      "visual": "logs"
     },
     {
-      "name": "AI-assisted malware triage",
+      "name": "AI-assisted malware triage.",
       "shortName": "AI Malware Analyzer",
-      "category": "02 / Applied AI & security",
-      "description": "A published Gemini workflow for reviewing suspicious WordPress files with structured, checkable verdicts.",
-      "url": "https://adityashah.blog/ai-powered-malware-triage-using-gemini/",
-      "label": "Read the workflow",
+      "category": "02 / Security workflows",
+      "description": "A published workflow using Gemini to classify suspicious WordPress files and support human investigation. AI provides another signal in the review process.",
+      "url": "https://adityashah.blog/ai-powered-malware-triage-using-gemini-to-classify-suspicious-wordpress-files/",
+      "label": "Read the malware triage write-up",
       "tags": [
         "WordPress security",
         "Gemini"
       ],
-      "visual": "security",
-      "challenge": "Reviewing many suspicious files without treating an AI verdict as proof.",
-      "approach": "Use structured classifications, confidence, and observable indicators; a human confirms the findings.",
-      "proof": "Read the published workflow and its limits."
+      "visual": "security"
     },
     {
-      "name": "Hosting operations automation",
+      "name": "Less repetition. More engineering.",
       "shortName": "Hosting Ops Automation",
-      "category": "03 / Infrastructure & automation",
-      "description": "A practical write-up on combining Gemini and Ansible for repeatable hosting support workflows.",
+      "category": "03 / Operational automation",
+      "description": "A practical write-up on combining Gemini and Ansible for hosting support operations, turning recurring tasks into repeatable workflows.",
       "url": "https://adityashah.blog/automating-hosting-support-ops-with-gemini-ansible/",
-      "label": "Read the write-up",
+      "label": "Read the automation write-up",
       "tags": [
         "Ansible",
         "AI-assisted operations"
       ],
-      "visual": "automation",
-      "challenge": "Recurring operational work that needs a consistent process.",
-      "approach": "Connect AI-assisted analysis with Ansible workflows and document the operational decisions.",
-      "proof": "Read the implementation write-up."
+      "visual": "automation"
     }
   ],
   "roleFit": [
-    "Technical Support / Support Engineering Leadership",
-    "Customer Engineering / Technical Solutions",
-    "Cloud Infrastructure / DevOps",
-    "Applied AI / Operational Automation",
-    "Developer Relations / Community"
+    "Support Engineering / Technical Support Management",
+    "DevOps / Linux / Hosting & Platform Operations",
+    "Technical CX / Customer Engineering / Technical Account Management",
+    "WordPress Infrastructure / Security Operations",
+    "Technical Community / Developer Relations"
   ]
 }
