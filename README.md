@@ -4,7 +4,7 @@ A static Next.js portfolio positioning Aditya at the intersection of technical c
 
 ## Routes
 
-- `/` — portfolio homepage with a live WordPress REST API article feed and local fallback
+- `/` — portfolio homepage with selected public work and curated technical articles
 - `/recruiter/` — concise printable recruiter view
 - `/robots.txt` and `/sitemap.xml` — generated SEO files
 
@@ -24,4 +24,4 @@ npm run build
 
 The build uses `output: 'export'` and writes the GitHub Pages-compatible site to `out/`. Content lives in `public/content.json`; claim sourcing and removed claims are documented in `docs/CONTENT-SOURCES.md`.
 
-The homepage fetches three recent posts from `https://adityashah.blog/wp-json/wp/v2/posts?per_page=3&_embed=wp:term` in the browser. If that request fails, the published fallback entries in `content.json` remain visible.
+The homepage uses three curated technical articles from `content.json`. Light is the default theme; a visitor’s explicit theme choice is remembered locally.
