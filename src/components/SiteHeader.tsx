@@ -6,10 +6,10 @@ const links = [["Capabilities", "/#capabilities"], ["Impact", "/#impact"], ["Exp
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   useEffect(() => {
     const stored = window.localStorage.getItem("portfolio-theme");
-    const nextDark = stored ? stored === "dark" : true;
+    const nextDark = stored ? stored === "dark" : false;
     setDark(nextDark); document.documentElement.dataset.theme = nextDark ? "dark" : "light";
   }, []);
   function toggleTheme() { const next = !dark; setDark(next); document.documentElement.dataset.theme = next ? "dark" : "light"; window.localStorage.setItem("portfolio-theme", next ? "dark" : "light"); }
