@@ -44,14 +44,13 @@ export default function Speaking() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) }) }} />
     <main id="main">
       <section className="hero section-shell speaker-hero" aria-labelledby="speaking-title">
-        <div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> Available for WordCamps, DevFests, meetups & conferences</p><h1 id="speaking-title">Invite Aditya Shah<br /><span>to speak.</span></h1><p className="hero-lede">{s.summary}</p><p className="hero-summary">11 years of speaking · 50,000+ people reached · WordCamp speaker since 2019 · Build with AI by Google & Hack2Skill · College and campus sessions · Community organizer since 2015 · Based in Bhopal, India; in person or online.</p><div className="hero-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href="#talks">See talks I can bring <Arrow /></a></div></div>
+        <div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> Available for WordCamps, DevFests, meetups & conferences</p><h1 id="speaking-title">Invite Aditya Shah<br /><span>to speak.</span></h1><p className="hero-lede">I love helping people, and a stage is one of the best places to do it. {s.summary}</p><p className="hero-summary">11 years of speaking · 50,000+ people reached · WordCamp speaker since 2019 · Build with AI by Google & Hack2Skill · College and campus sessions · Community organizer since 2015 · Based in Bhopal, India; in person or online.</p><div className="hero-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href="#talks">See talks I can bring <Arrow /></a></div><p className="invite-email">Or write directly to <a href={`mailto:${data.meta.email}`}>{data.meta.email}</a></p></div>
       </section>
 
-      <section className="proof-strip" aria-label="Speaking and community proof points"><div className="section-shell proof-grid">
+      <section className="proof-strip" aria-label="Speaking and community proof points"><div className="section-shell proof-grid proof-grid-3">
         <article><strong>{s.past.length}</strong><h2>recorded WordCamp talks</h2><p>On WordPress.tv, 2019 – 2025</p></article>
         <article><strong>{s.reach.value}</strong><h2>{s.reach.label}</h2><p>{s.reach.detail}</p></article>
         <article><strong>100+</strong><h2>community events</h2><p>Meetups, workshops & gatherings</p></article>
-        <article><strong>1,500+</strong><h2>students reached</h2><p>Through WP Build Tour</p></article>
       </div></section>
 
       <section className="section writing-section" id="past-talks"><div className="section-shell">
@@ -84,7 +83,7 @@ export default function Speaking() {
         <div className="capability-list">{faqs.map((item) => <article key={item.q} className="capability-row faq-row"><div><h3>{item.q}</h3><p>{item.a}</p></div></article>)}</div>
       </section>
 
-      <section className="contact-section" id="contact"><div className="section-shell contact-layout"><p className="eyebrow">Speaking invitations</p><h2>Have a stage that needs production stories?</h2><p>Send the event, date, audience, and the talk or topic you have in mind.</p><div className="contact-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href={data.meta.linkedin} target="_blank" rel="me noopener noreferrer">Message on LinkedIn <Arrow /></a></div></div></section>
+      <section className="contact-section" id="contact"><div className="section-shell contact-layout"><p className="eyebrow">Speaking invitations</p><h2>Have a stage that needs production stories?</h2><p>Send the event, date, audience, and the talk or topic you have in mind.</p><div className="contact-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href={data.meta.linkedin} target="_blank" rel="me noopener noreferrer">Message on LinkedIn <Arrow /></a></div><p className="invite-email">Or write directly to <a href={`mailto:${data.meta.email}`}>{data.meta.email}</a></p></div></section>
     </main>
     <footer className="site-footer"><div className="section-shell"><a className="footer-mark" href="/">AS<span>.</span></a><p>Speaker · Community manager · DevOps engineer</p><nav aria-label="Social links"><a href={data.meta.github} rel="me">GitHub</a><a href={data.meta.linkedin} rel="me">LinkedIn</a><a href="https://adityashah.blog/" rel="me">Blog</a></nav><p>© {new Date().getFullYear()} Aditya Shah</p></div></footer>
   </>;

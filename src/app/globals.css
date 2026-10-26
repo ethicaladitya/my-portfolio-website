@@ -141,3 +141,6 @@ svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stro
 .speaker-bios { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }.speaker-bios article { padding: 2rem; background: var(--surface); }.speaker-bios article > p:last-child { margin: 0; user-select: all; }
 @media (max-width: 760px) { .speaker-bios { grid-template-columns: 1fr; } }
 .faq-row { grid-template-columns: 1fr; }
+.proof-grid.proof-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.invite-email { margin: 1rem 0 0; color: var(--muted); font-size: .85rem; }.invite-email a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }.contact-layout .invite-email { grid-column: 1 / -1; }
+@media (max-width: 760px) { .proof-grid.proof-grid-3 { grid-template-columns: 1fr; } .proof-grid.proof-grid-3 article { border-right: 0; border-bottom: 1px solid var(--line); } }
