@@ -19,7 +19,7 @@ const invite = `mailto:${data.meta.email}?subject=${encodeURIComponent("Speaking
 
 const faqs = [
   { q: "What does Aditya Shah speak about?", a: `WordPress security and malware cleanup, WP-CLI, performance, hosting and DevOps, Linux, DNS and web fundamentals, AI agents for real operations, and community building.` },
-  { q: "Where has Aditya Shah spoken?", a: `WordCamp Asia 2023, WordCamp Nepal 2022, WordCamp Pokhara 2025, WordCamp Kochi 2019, Build with AI by Google & Hack2Skill, and many college and campus events. WordCamp talks are recorded on WordPress.tv.` },
+  { q: "Where has Aditya Shah spoken?", a: `WordCamp Asia 2023, WordCamp Nepal 2022, WordCamp Pokhara 2025, WordCamp Kochi 2019, WordCamp Mumbai, Build with AI by Google & Hack2Skill, and many college and campus events, reaching 50,000+ people over 11 years. Four WordCamp talks are recorded on WordPress.tv.` },
   { q: "Which formats work?", a: `Conference talks and keynotes, hands-on workshops, panels and fireside chats, campus sessions, and meetup talks, in person or online.` },
   { q: "How do I invite Aditya Shah to speak?", a: `Email ${data.meta.email} with the event, date, city or online, audience, and the talk or topic you have in mind, or message him on LinkedIn.` },
 ];
@@ -44,12 +44,12 @@ export default function Speaking() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) }) }} />
     <main id="main">
       <section className="hero section-shell speaker-hero" aria-labelledby="speaking-title">
-        <div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> Available for WordCamps, DevFests, meetups & conferences</p><h1 id="speaking-title">Invite Aditya Shah<br /><span>to speak.</span></h1><p className="hero-lede">{s.summary}</p><p className="hero-summary">WordCamp speaker since 2019 · Build with AI by Google & Hack2Skill · College and campus sessions · Community organizer since 2015 · Based in Bhopal, India; in person or online.</p><div className="hero-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href="#talks">See talks I can bring <Arrow /></a></div></div>
+        <div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> Available for WordCamps, DevFests, meetups & conferences</p><h1 id="speaking-title">Invite Aditya Shah<br /><span>to speak.</span></h1><p className="hero-lede">{s.summary}</p><p className="hero-summary">11 years of speaking · 50,000+ people reached · WordCamp speaker since 2019 · Build with AI by Google & Hack2Skill · College and campus sessions · Community organizer since 2015 · Based in Bhopal, India; in person or online.</p><div className="hero-actions"><a className="button button-primary" href={invite}>Send a speaking invitation <Arrow /></a><a className="text-link" href="#talks">See talks I can bring <Arrow /></a></div></div>
       </section>
 
       <section className="proof-strip" aria-label="Speaking and community proof points"><div className="section-shell proof-grid">
         <article><strong>{s.past.length}</strong><h2>recorded WordCamp talks</h2><p>On WordPress.tv, 2019 – 2025</p></article>
-        <article><strong>2015</strong><h2>community organizer since</h2><p>WordPress Bhopal founder</p></article>
+        <article><strong>{s.reach.value}</strong><h2>{s.reach.label}</h2><p>{s.reach.detail}</p></article>
         <article><strong>100+</strong><h2>community events</h2><p>Meetups, workshops & gatherings</p></article>
         <article><strong>1,500+</strong><h2>students reached</h2><p>Through WP Build Tour</p></article>
       </div></section>

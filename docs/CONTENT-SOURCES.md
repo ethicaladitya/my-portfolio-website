@@ -17,6 +17,7 @@ The separate blog currently contains conflicting Asia 2026 speaker and older mee
 - Recorded talks (WordPress.tv speaker page https://wordpress.tv/speakers/aditya-shah/): WordCamp Kochi 2019 "Website optimization the right way", WordCamp Nepal 2022 and WordCamp Asia 2023 "WP-CLI Unleashed", WordCamp Pokhara 2025 "From Infection to Protection: Mastering WordPress Malware Cleanup". WordPress.org badge "WordCamp Speaker '19".
 - Owner-supplied (October 2026), no public record checked: Build with AI by Google & Hack2Skill at Oriental Institute; many college events on WordPress, Linux, websites and DNS. No years or titles are claimed for these.
 - "Talks I can bring" are proposals from the owner's CFP drafts, offered to organizers, not presented as delivered.
-- Removed from the speaking list: WordCamp Mumbai (self-described on the WordPress.org bio, no recording or event record found). Add it back with a source.
+- WordCamp Mumbai: owner confirmed speaking there (October 2026); no recording was published, owner to supply a photo. Listed without a link.
+- 50,000+ people reached over 11 years of speaking: owner-supplied (October 2026). The 50,000-tickets figure from talk notes is not used.
 - "Community manager" describes founding and running WordPress Bhopal since 2015 (WordPress.org profile, owner).
 - Live deploy is built from this branch's lineage (`8dec94e` + the February 2019 date fix), not `main`, matching what was live on gh-pages.

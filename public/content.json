@@ -273,6 +273,7 @@
       "WordCamp Asia 2023",
       "WordCamp Nepal 2022",
       "WordCamp Kochi 2019",
+      "WordCamp Mumbai",
       "Build with AI \u00b7 Google & Hack2Skill",
       "College & campus events"
     ],
@@ -346,10 +347,14 @@
       "Meetup talks, in person or online"
     ],
     "bio": {
-      "short": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV and has organized the WordPress Bhopal community since 2015. He speaks at WordCamps and developer events on WordPress security, WP-CLI, performance, and AI agents for real operations.",
-      "long": "Aditya Shah leads hosting support at WPMU DEV, where he manages a distributed team and stays hands-on with Linux infrastructure, incident response, WordPress security investigations, and automation. He has worked with WordPress since 2014, founded and still runs the WordPress Bhopal community (100+ meetups and events since 2015), helped run the WP Build Tour that introduced 1,500+ students to WordPress, and is part of the WordCamp Asia 2026 organizing team. He has spoken at WordCamp Asia, WordCamp Nepal, WordCamp Pokhara, and WordCamp Kochi, at Build with AI by Google & Hack2Skill, and at many college events on WordPress, Linux, DNS, and how websites work. He also contributes to WP-CLI. His talks turn production lessons into practical takeaways audiences can use the following Monday."
+      "short": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV and has organized the WordPress Bhopal community since 2015. In 11 years of speaking at WordCamps, colleges, and developer events, he has reached 50,000+ people with talks on WordPress security, WP-CLI, performance, and AI agents for real operations.",
+      "long": "Aditya Shah leads hosting support at WPMU DEV, where he manages a distributed team and stays hands-on with Linux infrastructure, incident response, WordPress security investigations, and automation. He has worked with WordPress since 2014, founded and still runs the WordPress Bhopal community (100+ meetups and events since 2015), helped run the WP Build Tour that introduced 1,500+ students to WordPress, and is part of the WordCamp Asia 2026 organizing team. He has spoken at WordCamp Asia, WordCamp Nepal, WordCamp Pokhara, WordCamp Kochi, and WordCamp Mumbai, at Build with AI by Google & Hack2Skill, and at many college events on WordPress, Linux, DNS, and how websites work. In 11 years of speaking he has reached more than 50,000 people. He also contributes to WP-CLI. His talks turn production lessons into practical takeaways audiences can use the following Monday."
     },
     "also": [
+      {
+        "event": "WordCamp Mumbai",
+        "detail": "Speaker (no recording published)"
+      },
       {
         "event": "Build with AI by Google & Hack2Skill",
         "detail": "Speaker at Oriental Institute"
@@ -366,7 +371,12 @@
         "event": "WordPress Bhopal meetups",
         "detail": "Regular talks and workshops since 2015"
       }
-    ]
+    ],
+    "reach": {
+      "value": "50,000+",
+      "label": "people reached through talks",
+      "detail": "Over 11 years of speaking"
+    }
   },
   "tools": [
     {
