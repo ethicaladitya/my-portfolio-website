@@ -1,15 +1,16 @@
 {
   "meta": {
     "name": "Aditya Shah",
-    "title": "Hosting Support Manager & DevOps Engineer",
+    "title": "DevOps Engineer, Community Manager & Public Speaker",
     "company": "WPMU DEV (Incsub LLC)",
     "location": "Bhopal, India \u00b7 Working globally",
-    "email": "hi@adityashah.dev",
+    "email": "hi@theadityashah.com",
     "Blog": "https://adityashah.blog",
     "website": "https://theadityashah.com/",
     "github": "https://github.com/ethicaladitya",
     "linkedin": "https://linkedin.com/in/ethicaladitya",
-    "tagline": "I connect the people, systems, and decisions that keep production moving."
+    "tagline": "I connect the people, systems, and decisions that keep production moving.",
+    "speakerTitle": "Public speaker on WordPress, DevOps, security & AI agents"
   },
   "hero": {
     "greeting": "Aditya Shah",
@@ -18,7 +19,7 @@
       "WordPress infrastructure",
       "Production operations"
     ],
-    "description": "Hosting Support Manager / DevOps Engineer at WPMU DEV. I lead distributed support engineers and stay hands-on with infrastructure, incidents, security, and automation."
+    "description": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV, a community manager who has organized WordPress Bhopal since 2015, and a WordCamp speaker on WordPress security, WP-CLI, performance, and AI-assisted operations."
   },
   "stats": [
     {
@@ -37,7 +38,7 @@
       "value": 100,
       "suffix": "+",
       "label": "community events",
-      "detail": "Meetups, workshops & community gatherings"
+      "detail": "Meetups, workshops & community gatherings organized"
     },
     {
       "value": 1500,
@@ -161,7 +162,7 @@
   "community": [
     {
       "event": "WordPress Bhopal",
-      "role": "Organizer since 2015",
+      "role": "Founder & community manager since 2015",
       "years": "2015 \u2014 present",
       "description": "Building a consistent space for developers, site owners, and new contributors to learn together. 100+ meetups and community events over the years."
     },
@@ -264,6 +265,119 @@
     "WordPress.org: active community member and speaker",
     "GitHub: public engineering work and tooling at github.com/ethicaladitya"
   ],
+  "speaking": {
+    "headline": "From production systems to the stage.",
+    "summary": "I speak at WordCamps and developer events on what I deal with every day: WordPress security, WP-CLI, performance, hosting infrastructure, and AI agents for real operations. Talks are practical, story-led, and built from production work, not slides about slides.",
+    "events": [
+      "WordCamp Pokhara 2025",
+      "WordCamp Asia 2023",
+      "WordCamp Nepal 2022",
+      "WordCamp Kochi 2019",
+      "WordCamp Mumbai",
+      "Build with AI \u00b7 Google & Hack2Skill",
+      "College & campus events"
+    ],
+    "topics": [
+      "WordPress security",
+      "WP-CLI",
+      "Performance",
+      "Hosting & DevOps",
+      "Linux",
+      "DNS & web fundamentals",
+      "AI agents",
+      "Community building"
+    ],
+    "past": [
+      {
+        "event": "WordCamp Pokhara 2025",
+        "title": "From Infection to Protection: Mastering WordPress Malware Cleanup",
+        "url": "https://wordpress.tv/2026/01/26/from-infection-to-protection-mastering-wordpress-malware-cleanup/",
+        "date": "2026-01-26"
+      },
+      {
+        "event": "WordCamp Asia 2023",
+        "title": "WP-CLI Unleashed",
+        "url": "https://wordpress.tv/2023/09/10/wp-cli-unleashed/",
+        "date": "2023-09-10"
+      },
+      {
+        "event": "WordCamp Nepal 2022",
+        "title": "WP-CLI Unleashed",
+        "url": "https://wordpress.tv/2023/02/16/aditya-shah-wpcli-unleashed/",
+        "date": "2023-02-16"
+      },
+      {
+        "event": "WordCamp Kochi 2019",
+        "title": "Website Optimization the Right Way",
+        "url": "https://wordpress.tv/2022/10/25/website-optimization-the-right-way/",
+        "date": "2022-10-25"
+      }
+    ],
+    "talks": [
+      {
+        "title": "Beyond Chatbots: Building AI Agents That Actually Do Things",
+        "fit": "DevFest, GDG, developer conferences",
+        "length": "35\u201340 min talk",
+        "abstract": "What turns an LLM into an agent? Tool calling, MCP, memory, planning, and agent loops, shown through real developer workflows: inspecting Linux, calling APIs, working with WordPress, and reading logs. Plus the lesson most demos skip: when a shell script or Ansible playbook is still the better answer."
+      },
+      {
+        "title": "I Gave an AI Agent SSH Access: Here's What I Learned",
+        "fit": "WordCamps, DevOps & cloud meetups",
+        "length": "30\u201340 min talk",
+        "abstract": "AI agents on a real Linux server: gathering context over SSH, investigating high CPU, debugging WordPress, spotting suspicious files. Then the hard part: permission boundaries, command restrictions, secrets, human approval, audit logs, and rollback."
+      },
+      {
+        "title": "Security Isn't a Plugin: Lessons From Real WordPress Incidents",
+        "fit": "WordCamps, WordPress meetups, agencies",
+        "length": "20\u201330 min talk",
+        "abstract": "Stories from real compromised sites: the reused password, the patch that came too late, the \"free\" premium plugin, the developer's laptop. No fear-mongering and no product pitch, just what actually stops the next incident."
+      },
+      {
+        "title": "WP-CLI Unleashed",
+        "fit": "WordCamps, developer meetups, workshops",
+        "length": "Talk or hands-on workshop",
+        "abstract": "Managing WordPress from the command line: bulk operations, search-replace, migrations, and scripting routine work. Delivered at WordCamp Asia 2023 and WordCamp Nepal 2022; available as a hands-on workshop."
+      }
+    ],
+    "formats": [
+      "Conference talks & keynotes",
+      "Hands-on workshops",
+      "Panels & fireside chats",
+      "Student and campus sessions",
+      "Meetup talks, in person or online"
+    ],
+    "bio": {
+      "short": "Aditya Shah is a Hosting Support Manager and DevOps Engineer at WPMU DEV and has organized the WordPress Bhopal community since 2015. In 11 years of speaking at WordCamps, colleges, and developer events, he has reached 50,000+ people with talks on WordPress security, WP-CLI, performance, and AI agents for real operations.",
+      "long": "Aditya Shah leads hosting support at WPMU DEV, where he manages a distributed team and stays hands-on with Linux infrastructure, incident response, WordPress security investigations, and automation. He has worked with WordPress since 2014, founded and still runs the WordPress Bhopal community (100+ meetups and events since 2015), helped run the WP Build Tour that introduced 1,500+ students to WordPress, and is part of the WordCamp Asia 2026 organizing team. He has spoken at WordCamp Asia, WordCamp Nepal, WordCamp Pokhara, WordCamp Kochi, and WordCamp Mumbai, at Build with AI by Google & Hack2Skill, and at many college events on WordPress, Linux, DNS, and how websites work. In 11 years of speaking he has reached more than 50,000 people. He also contributes to WP-CLI. His talks turn production lessons into practical takeaways audiences can use the following Monday."
+    },
+    "also": [
+      {
+        "event": "WordCamp Mumbai",
+        "detail": "Speaker (no recording published)"
+      },
+      {
+        "event": "Build with AI by Google & Hack2Skill",
+        "detail": "Speaker at Oriental Institute"
+      },
+      {
+        "event": "College & campus events",
+        "detail": "Many sessions on WordPress, Linux, websites, DNS, and how the web works"
+      },
+      {
+        "event": "WP Build Tour",
+        "detail": "Hands-on WordPress workshops reaching 1,500+ students"
+      },
+      {
+        "event": "WordPress Bhopal meetups",
+        "detail": "Regular talks and workshops since 2015"
+      }
+    ],
+    "reach": {
+      "value": "50,000+",
+      "label": "people reached through talks",
+      "detail": "Over 11 years of speaking"
+    }
+  },
   "tools": [
     {
       "name": "Making logs easier to investigate.",
@@ -282,9 +396,9 @@
       "name": "AI-assisted malware triage.",
       "shortName": "AI Malware Analyzer",
       "category": "02 / Security workflows",
-      "description": "A published workflow using Gemini to classify suspicious WordPress files and support human investigation. AI provides another signal in the review process.",
-      "url": "https://adityashah.blog/ai-powered-malware-triage-using-gemini-to-classify-suspicious-wordpress-files/",
-      "label": "Read the malware triage write-up",
+      "description": "A public AI-assisted tool for classifying suspicious WordPress files and supporting human malware investigation. AI provides another signal in the review process.",
+      "url": "https://malwareanalyser.theadityashah.com/",
+      "label": "Open AI Malware Analyzer",
       "tags": [
         "WordPress security",
         "Gemini"
@@ -308,8 +422,9 @@
   "roleFit": [
     "Support Engineering / Technical Support Management",
     "DevOps / Linux / Hosting & Platform Operations",
+    "AI Engineering / AI-assisted Operations & Tooling",
     "Technical CX / Customer Engineering / Technical Account Management",
     "WordPress Infrastructure / Security Operations",
-    "Technical Community / Developer Relations"
+    "Developer Advocate / Community Manager / Developer Relations"
   ]
 }
