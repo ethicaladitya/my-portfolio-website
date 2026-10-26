@@ -136,3 +136,8 @@ svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stro
   @page { size: A4; margin: 10mm; }
   .site-header, .site-footer, .no-print { display: none !important; } body { background: white !important; color: #111 !important; font-size: 9pt; } a { color: inherit; }.recruiter-page { padding: 0; background: white; }.resume-sheet { width: 100%; max-width: none; padding: 0; box-shadow: none; }.resume-header h1 { font-size: 2.5rem; }.resume-section { padding-top: .9rem; }.resume-job { break-inside: avoid; margin-bottom: .8rem; }.resume-job li { margin-bottom: .15rem; }.resume-impact, .resume-advocacy { break-inside: avoid; }
 }
+.speaking-cta { display: inline-flex; margin-top: 1.6rem; color: var(--inverse-ink); border-color: rgba(243, 247, 245, .25); }
+.speaker-hero { min-height: auto; padding-bottom: 4rem; }.speaker-hero .hero-copy { max-width: 900px; }
+.speaker-bios { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }.speaker-bios article { padding: 2rem; background: var(--surface); }.speaker-bios article > p:last-child { margin: 0; user-select: all; }
+@media (max-width: 760px) { .speaker-bios { grid-template-columns: 1fr; } }
+.faq-row { grid-template-columns: 1fr; }

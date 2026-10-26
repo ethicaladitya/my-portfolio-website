@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://theadityashah.com/speaking/",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://theadityashah.com/recruiter/",
       lastModified: new Date(),
       changeFrequency: "monthly",
