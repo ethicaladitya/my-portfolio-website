@@ -33,7 +33,7 @@ const structuredData = {
   description,
   mainEntity: { "@id": "https://theadityashah.com/#person" },
   breadcrumb: { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Aditya Shah", item: "https://theadityashah.com/" }, { "@type": "ListItem", position: 2, name: "Speaking", item: "https://theadityashah.com/speaking/" }] },
-  hasPart: s.past.map((talk) => ({ "@type": "VideoObject", name: `${talk.title} (${talk.event})`, url: talk.url, uploadDate: talk.date, description: `Talk by Aditya Shah at ${talk.event}.`, creator: { "@id": "https://theadityashah.com/#person" } })),
+  hasPart: s.past.map((talk) => ({ "@type": "VideoObject", name: `${talk.title} (${talk.event})`, url: talk.url, embedUrl: talk.embed, thumbnailUrl: talk.thumbnail, uploadDate: talk.date, description: `Talk by Aditya Shah at ${talk.event}.`, creator: { "@id": "https://theadityashah.com/#person" } })),
 };
 
 const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" /></svg>;
