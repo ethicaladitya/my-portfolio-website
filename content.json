@@ -292,25 +292,33 @@
         "event": "WordCamp Pokhara 2025",
         "title": "From Infection to Protection: Mastering WordPress Malware Cleanup",
         "url": "https://wordpress.tv/2026/01/26/from-infection-to-protection-mastering-wordpress-malware-cleanup/",
-        "date": "2026-01-26"
+        "date": "2026-01-26T09:59:54+00:00",
+        "thumbnail": "https://videos.files.wordpress.com/DCHKSWUD/video-c808759986_mov_hd_1080p.original.jpg",
+        "embed": "https://video.wordpress.com/embed/DCHKSWUD"
       },
       {
         "event": "WordCamp Asia 2023",
         "title": "WP-CLI Unleashed",
         "url": "https://wordpress.tv/2023/09/10/wp-cli-unleashed/",
-        "date": "2023-09-10"
+        "date": "2023-09-10T16:01:55+00:00",
+        "thumbnail": "https://videos.files.wordpress.com/DSJTxt18/video-4e4a7bc279_m4v.scrubthumb.jpg",
+        "embed": "https://video.wordpress.com/embed/DSJTxt18"
       },
       {
         "event": "WordCamp Nepal 2022",
         "title": "WP-CLI Unleashed",
         "url": "https://wordpress.tv/2023/02/16/aditya-shah-wpcli-unleashed/",
-        "date": "2023-02-16"
+        "date": "2023-02-16T16:11:48+00:00",
+        "thumbnail": "https://videos.files.wordpress.com/1bWtiocZ/video-25044af5c3_mp4_hd_1080p.original.jpg",
+        "embed": "https://video.wordpress.com/embed/1bWtiocZ"
       },
       {
         "event": "WordCamp Kochi 2019",
         "title": "Website Optimization the Right Way",
         "url": "https://wordpress.tv/2022/10/25/website-optimization-the-right-way/",
-        "date": "2022-10-25"
+        "date": "2022-10-25T16:19:14+00:00",
+        "thumbnail": "https://videos.files.wordpress.com/RiFap8yl/video-71fdb3a876_mp4.scrubthumb.jpg",
+        "embed": "https://video.wordpress.com/embed/RiFap8yl"
       }
     ],
     "talks": [
